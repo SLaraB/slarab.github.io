@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastian Lara - Portafolio Profesional</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sebastián Lara Barría</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script> 
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .nav-button.active {
+      font-weight: bold;
+      color: #4f46e5 !important;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+  </style>
 </head>
-<body>
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">SL</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+<body class="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-600">Sebastián Lara Barría</h1>
+      <ul class="flex space-x-6">
+        <li><button onclick="showSection('about')" id="btn-about" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button active">Sobre mí</button></li>
+        <li><button onclick="showSection('education')" id="btn-education" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button">Educación</button></li>
+        <li><button onclick="showSection('experience')" id="btn-experience" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button">Experiencia</button></li>
+        <li><button onclick="showSection('projects')" id="btn-projects" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button">Proyectos</button></li>
+        <li><button onclick="showSection('skills')" id="btn-skills" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button">Habilidades</button></li>
+      </ul>
     </nav>
+  </header>
 
     <!-- Sección Hero -->
     <section id="inicio" class="hero">
