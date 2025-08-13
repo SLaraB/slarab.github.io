@@ -16,11 +16,13 @@
       animation: fadeIn 0.5s ease-out forwards;
     }
 
+    /* Botón activo */
     .nav-button.active {
       font-weight: bold;
-      color: #4f46e5 !important;
+      color: #4f46e5 !important; /* indigo-600 */
     }
 
+    /* Asegurar que el footer esté siempre al final del contenido */
     html, body {
       height: 100%;
     }
@@ -50,141 +52,278 @@
     </nav>
   </header>
 
-    <!-- Sección Hero -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Sebastian Lara</h1>
-            <p class="typing-text">Desarrollador Web</p>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
+  <!-- Main Content -->
+  <main id="main-content" class="max-w-6xl mx-auto px-6 py-12 flex-grow"></main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-6">
+    <div class="max-w-6xl mx-auto px-6 text-center text-gray-500 text-sm">
+      &copy; 2025 Sebastián Lara Barría. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Script para mostrar secciones dinámicamente -->
+  <script>
+    const sections = {
+      about: `
+        <section class="animate-fadeIn">
+          <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <img src="foto.jpg" alt="Foto de perfil" class="w-60 h-60 rounded-full object-cover border-4 border-indigo-200 shadow-lg"/>
+            <div>
+              <h2 class="text-3xl font-bold mb-2">Hola, soy Sebastián Lara Barría</h2>
+              <p class="text-lg text-indigo-600 mb-4">Ingeniero en Informática | Máster en Ciencia de Datos | Candidato a Doctor en Ingeniería Civil</p>
+                <p class="mb-4 max-w-2xl">
+                  Soy un ingeniero en Informática con un Máster en Ciencia de Datos y actualmente candidato a Doctorado en Ingeniería Civil en la Universidad de Cantabria. Me especializo en arquitectura de software, desarrollo full-stack e inteligencia artificial aplicada, con un enfoque en visión artificial y modelos predictivos. Mi experiencia incluye el uso de tecnologías como Next.js, Node.js, MongoDB, Python, Keras, PyTorch y Scikit-learn, así como servicios en la nube como AWS, Azure y Google Cloud Platform.
+                <br>
+                  He trabajado en proyectos de digitalización y optimización de procesos, aplicando técnicas de aprendizaje automático y deep learning para mejorar la eficiencia operativa y la toma de decisiones informadas en sectores clave como infraestructura vial y sostenibilidad ambiental.
+                <br>
+                  Más allá del código, tengo una fuerte vocación docente y he sido tutor en asignaturas como Cálculo en una variable, Sistemas de Información, Investigación Operativa y Programación Orientada a Objetos. Me apasiona compartir conocimientos y fomentar el aprendizaje colaborativo como parte integral de mi desarrollo profesional.
+                <br>
+                  También tengo un compromiso profundo con proyectos que impacten positivamente en la sociedad y el medio ambiente. Me intereso especialmente en iniciativas de ciencia ciudadana, donde la tecnología se pone al servicio de comunidades locales para abordar problemáticas sociales, territoriales y ambientales. Creo firmemente en el uso ético y responsable de la inteligencia artificial y los sistemas de información para construir soluciones inclusivas y sostenibles.
+                </p>
+              <div class="flex flex-wrap gap-4 mt-4">
+                <a href="mailto:sebastianlarabarria@gmail.com" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  sebastianlarabarria@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/slarab/"  target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  LinkedIn
+                </a>
+                <a href="https://github.com/slarab"  target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  GitHub
+                </a>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Sección Sobre Mí -->
-    <section id="sobre-mi" class="about">
-        <div class="container">
-            <h2>Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>¡Hola! Soy Sebastian, un apasionado desarrollador web con experiencia en la creación de soluciones digitales innovadoras. Me especializo en el desarrollo de aplicaciones web modernas y escalables, siempre buscando implementar las mejores prácticas y tecnologías más actuales.</p>
-                    
-                    <div class="education">
-                        <h3>Educación</h3>
-                        <div class="education-item">
-                            <h4>Ingeniería en Sistemas Computacionales</h4>
-                            <p>Universidad Nacional Autónoma de México (UNAM)</p>
-                            <p>2018 - 2022</p>
-                        </div>
-                        <div class="education-item">
-                            <h4>Certificación en Desarrollo Web Full Stack</h4>
-                            <p>Digital House</p>
-                            <p>2022</p>
-                        </div>
-                    </div>
-
-                    <div class="experience">
-                        <h3>Experiencia Profesional</h3>
-                        <div class="experience-item">
-                            <h4>Desarrollador Web Senior</h4>
-                            <p>Empresa Tecnológica XYZ</p>
-                            <p>2022 - Presente</p>
-                            <ul>
-                                <li>Desarrollo de aplicaciones web utilizando React y Node.js</li>
-                                <li>Liderazgo de equipo de desarrollo frontend</li>
-                                <li>Implementación de arquitecturas escalables</li>
-                            </ul>
-                        </div>
-                        <div class="experience-item">
-                            <h4>Desarrollador Frontend</h4>
-                            <p>Startup ABC</p>
-                            <p>2020 - 2022</p>
-                            <ul>
-                                <li>Desarrollo de interfaces de usuario responsivas</li>
-                                <li>Optimización de rendimiento web</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="skills">
-                        <h3>Habilidades Técnicas</h3>
-                        <div class="skill-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>TypeScript</span>
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>Express</span>
-                            <span>MongoDB</span>
-                            <span>PostgreSQL</span>
-                            <span>Git</span>
-                            <span>Docker</span>
-                            <span>AWS</span>
-                        </div>
-
-                        <h3>Habilidades Blandas</h3>
-                        <div class="soft-skills">
-                            <span>Liderazgo</span>
-                            <span>Trabajo en equipo</span>
-                            <span>Comunicación efectiva</span>
-                            <span>Resolución de problemas</span>
-                            <span>Gestión del tiempo</span>
-                            <span>Adaptabilidad</span>
-                        </div>
-
-                        <h3>Idiomas</h3>
-                        <div class="languages">
-                            <span>Español - Nativo</span>
-                            <span>Inglés - Avanzado</span>
-                            <span>Portugués - Intermedio</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </section>
+      `,
+      education: `
+        <section class="animate-fadeIn">
+          <h2 class="text-2xl font-bold mb-6">Formación Académica</h2>
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Doctorado en Ingeniería Civil</h3>
+              <p class="text-indigo-600">Universidad de Cantabria</p>
+              <p class="text-sm text-gray-500 mt-1">Oct 2024 - Presente</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Tesis enfocada en detección, clasificación y caracterización de pavimento reciclado con visión artificial y aprendizaje profundo.</li>
+                <li>Participación en congresos de inteligencia artificial y pavimentos.</li>
+              </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- Sección Proyectos -->
-    <section id="proyectos" class="projects">
-        <div class="container">
-            <h2>Proyectos Destacados</h2>
-            <div class="projects-grid">
-                <!-- Los proyectos se agregarán dinámicamente con JavaScript -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Máster en Informática, mención Ciencia de Datos</h3>
+              <p class="text-indigo-600">Universidad Austral de Chile</p>
+              <p class="text-sm text-gray-500 mt-1">Abr 2023 - Ago 2024</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Graduado con distinción.</li>
+                <li>Tesis enfocada en análisis territorial y percepción comunitaria de imágenes en contexto de incendios forestales.</li>
+                <li>Especialización en aprendizaje automático, redes neuronales y análisis de grandes volúmenes de datos.</li>
+                <li>Participación en congresos internacionales de Informática.</li>
+              </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- Sección Contacto -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <div class="contact-content">
-                <form id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" required placeholder="Nombre">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" required placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" required placeholder="Mensaje"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Enviar Mensaje</button>
-                </form>
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Ingeniería en Informática</h3>
+              <p class="text-indigo-600">Universidad Austral de Chile</p>
+              <p class="text-sm text-gray-500 mt-1">Mar 2015 - Dic 2022</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Graduado con distinción.</li>
+                <li>Participación activa en proyectos interdisciplinarios y desarrollo de software.</li>
+                <li>Participación en Centro de Estudiantes de la Facultad de Ciencias de la Ingeniería.</li>
+                <li>Tutor en asignaturas como Cálculo en una variable, Sistemas de Información, Investigación Operativa y Programación Orientada a Objetos.</li>
+              </ul>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
+      `,
+      experience: `
+        <section class="animate-fadeIn">
+          <h2 class="text-2xl font-bold mb-6">Experiencia Laboral</h2>
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Arquitecto y Desarrollador de Software</h3>
+              <p class="text-indigo-600">Grupo GITECO, Universidad de Cantabria</p>
+              <p class="text-sm text-gray-500 mt-1">Oct 2024 - Presente</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Diseño e implementación de soluciones de software para investigación en infraestructura vial.</li>
+                <li>Desarrollo de algoritmos de inteligencia artificial y deep learning para detección de deterioros en pavimentos.</li>
+                <li>Uso de AWS (EC2, ECR, S3) para procesamiento y almacenamiento de datos.</li>
+                <li>Integración de algoritmos de aprendizaje profundo en sistemas de análisis de infraestructura vial.</li>
+                <li>Uso de modelos predictivos multivariable para calcular la huella de carbono en pavimentos fabricados con materiales reciclados.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Next.js</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Node.js</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">MongoDB</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Python</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">AWS</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Deep Learning</span>
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Desarrollador de Software</h3>
+              <p class="text-indigo-600">MIRCo UAM</p>
+              <p class="text-sm text-gray-500 mt-1">Ene 2023 - Diciembre 2024</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Desarrollé frontend en React Native.</li>
+                <li>Backend usando MongoDB.</li>
+                <li>Sitio web desarrollado con Next.js.</li>
+                <li>Colaboré en proyecto interdisciplinario social.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">React Native</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">MongoDB</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Next.js</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">API REST</span>
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Científico de Datos</h3>
+              <p class="text-indigo-600">FONDEF ID22I10072</p>
+              <p class="text-sm text-gray-500 mt-1">Abr 2023 - Presente</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Modelos CNN con TensorFlow y PyTorch para análisis de imágenes y lenguaje natural.</li>
+                <li>Algoritmos avanzados para detección visual en imágenes comunitarias de incendios forestales.</li>
+                <li>Análisis de datos con Matplotlib y Seaborn.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">TensorFlow</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">PyTorch</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Python</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Visualización de Datos</span>
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Desarrollador de Software</h3>
+              <p class="text-indigo-600">FONDEF ID22I10072</p>
+              <p class="text-sm text-gray-500 mt-1">Abr 2022 - Dic 2022</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Lideré migración de app web a móvil con React Native.</li>
+                <li>Desarrollé API y tablero analítico sobre percepción de riesgos de incendios.</li>
+                <li>Implementé blockchain con Solidity para seguridad y anonimato.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">React Native</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">MongoDB</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Blockchain</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Solidity</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">API REST</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      `,
+      projects: `
+        <section class="animate-fadeIn">
+          <h2 class="text-2xl font-bold mb-6">Proyectos Destacados</h2>
+          <div class="space-y-6">
+<div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+  <h3 class="text-xl font-semibold">Voces Territorios</h3>
+  <p class="text-sm text-gray-500 mt-1">Madrid, España | MIRCo UAM | Ene 2023 - Dic 2024</p>
+  <ul class="mt-2 list-disc pl-5 text-gray-700">
+    <li>Desarrollo de una plataforma de ciencia ciudadana que permite registrar y visualizar luchas sociales por el territorio en diferentes regiones del mundo.</li>
+    <li>Incorporación de funcionalidades multimedia para recopilar textos, fotos, audios y videos desde comunidades locales.</li>
+    <li>Diseño e implementación del frontend móvil con React Native, garantizando una experiencia de usuario accesible y fluida.</li>
+    <li>Construcción del backend usando MongoDB para almacenar y organizar los datos georreferenciados.</li>
+    <li>Desarrollo del sitio web principal con Next.js, integrando mapas interactivos y visualización de contenidos comunitarios.</li>
+    <li>Facilitación de un espacio colaborativo que refleja la diversidad cultural, lingüística y de perspectivas en contextos de desigualdad territorial.</li>
+  </ul>
+  <div class="flex flex-wrap gap-2 mt-4">
+    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">React Native</span>
+    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">MongoDB</span>
+    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Next.js</span>
+    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">API REST</span>
+    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Geolocalización</span>
+    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Ciencia Ciudadana</span>
+  </div>
+</div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Análisis Territorial de Incendios Forestales</h3>
+              <p class="text-sm text-gray-500 mt-1">Valdivia, Chile | Universidad Austral de Chile | Abr 2023 - Ago 2024</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Desarrollo de modelos de redes neuronales convolucionales para analizar imágenes de incendios forestales.</li>
+                <li>Evaluación de algoritmos para identificar patrones visuales en conjuntos de datos comunitarios.</li>
+                <li>Uso de plataformas de ciencia ciudadana para recopilar datos de percepción comunitaria.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Python</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">TensorFlow</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">PyTorch</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Visualización de Datos</span>
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+              <h3 class="text-xl font-semibold">Desarrollo de Plataforma de Ciencia Ciudadana</h3>
+              <p class="text-sm text-gray-500 mt-1">Valdivia, Chile | Universidad Austral de Chile | Abr 2022 - Dic 2022</p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700">
+                <li>Diseño y migración de aplicación web a móvil para registrar datos comunitarios.</li>
+                <li>Integración de blockchain para certificar registros y garantizar seguridad.</li>
+                <li>Implementación de API y tablero analítico para visualización de datos recolectados.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">React Native</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">MongoDB</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Blockchain</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">API REST</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      `,
+      skills: `
+        <section class="animate-fadeIn">
+          <h2 class="text-2xl font-bold mb-6">Habilidades Técnicas</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-semibold mb-2">Programación</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Python (PyTorch, TensorFlow, Scikit-learn)</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">JavaScript (Next.js, Node.js)</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">MongoDB</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">SQL</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Solidity</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">C/C++</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Java</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">Herramientas y Tecnologías</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Apache</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Azure</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">AWS</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">GC</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Docker</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Git</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Linux</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Spark</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Power BI</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">Habilidades Blandas</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Gestión del tiempo</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Trabajo en equipo</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Resolución de problemas</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Pensamiento crítico</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Liderazgo técnico</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      `
+    };
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Sebastian Lara. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    function showSection(section) {
+      document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + section).classList.add('active');
+      document.getElementById("main-content").innerHTML = sections[section];
+    }
 
-    <script src="js/main.js"></script>
+    // Mostrar por defecto
+    showSection("about");
+  </script>
 </body>
 </html>
