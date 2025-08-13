@@ -141,12 +141,76 @@ body {
     margin-top: 1rem;
 }
 
-.skill-tags span {
+.skill-tags span,
+.soft-skills span,
+.languages span {
     background-color: var(--accent-color);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
+    margin: 0.25rem;
+    display: inline-block;
+}
+
+.education-item,
+.experience-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.education-item:hover,
+.experience-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h4,
+.experience-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.education-item p,
+.experience-item p {
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.experience-item ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item ul li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.skills h3 {
+    margin: 2rem 0 1rem;
+    color: var(--text-color);
+}
+
+.soft-skills,
+.languages {
+    margin-top: 1rem;
+}
+
+.languages span {
+    background-color: var(--secondary-color);
 }
 
 /* Sección Proyectos */
