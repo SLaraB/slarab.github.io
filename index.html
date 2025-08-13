@@ -8,52 +8,153 @@
   <script src="https://cdn.tailwindcss.com"></script> 
 
   <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary: #475569;
+      --accent: #f59e0b;
+    }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
     .animate-fadeIn {
-      animation: fadeIn 0.5s ease-out forwards;
+      animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 
-    /* Botón activo */
+    .animate-slideIn {
+      animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animate-scaleIn {
+      animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .nav-button {
+      position: relative;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-button:hover::after {
+      width: 100%;
+    }
+
     .nav-button.active {
-      font-weight: bold;
-      color: #4f46e5 !important; /* indigo-600 */
+      color: var(--primary);
+      font-weight: 600;
     }
 
-    /* Asegurar que el footer esté siempre al final del contenido */
-    html, body {
-      height: 100%;
+    .nav-button.active::after {
+      width: 100%;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
     }
 
     body {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     main {
       flex: 1;
     }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .backdrop-blur {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    @media (max-width: 768px) {
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .nav-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
   <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-10">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-indigo-600">Sebastián Lara Barría</h1>
-      <ul class="flex space-x-6">
-        <li><button onclick="showSection('about')" id="btn-about" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button active">Sobre mí</button></li>
-        <li><button onclick="showSection('education')" id="btn-education" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button">Educación</button></li>
-        <li><button onclick="showSection('experience')" id="btn-experience" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button">Experiencia</button></li>
-        <li><button onclick="showSection('projects')" id="btn-projects" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button">Proyectos</button></li>
-        <li><button onclick="showSection('skills')" id="btn-skills" class="capitalize transition-all duration-300 hover:text-indigo-600 nav-button">Habilidades</button></li>
-      </ul>
+  <header class="fixed w-full bg-white/95 backdrop-blur shadow-lg z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold gradient-text mb-4 md:mb-0 tracking-tight">Sebastián Lara Barría</h1>
+        <ul class="flex flex-wrap justify-center gap-2 md:gap-4">
+          <li><button onclick="showSection('about')" id="btn-about" class="nav-button text-gray-700 hover:text-primary active px-3 py-2 rounded-full text-sm md:text-base font-medium">Sobre mí</button></li>
+          <li><button onclick="showSection('education')" id="btn-education" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Educación</button></li>
+          <li><button onclick="showSection('experience')" id="btn-experience" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Experiencia</button></li>
+          <li><button onclick="showSection('projects')" id="btn-projects" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Proyectos</button></li>
+          <li><button onclick="showSection('skills')" id="btn-skills" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Habilidades</button></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main id="main-content" class="max-w-6xl mx-auto px-6 py-12 flex-grow"></main>
+  <main id="main-content" class="max-w-7xl mx-auto px-6 pt-28 pb-16 flex-grow"></main>
 
   <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 py-6">
@@ -67,13 +168,20 @@
     const sections = {
       about: `
         <section class="animate-fadeIn">
-          <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
-            <img src="foto.jpg" alt="Foto de perfil" class="w-60 h-60 rounded-full object-cover border-4 border-indigo-200 shadow-lg"/>
-            <div>
-              <h2 class="text-3xl font-bold mb-2">Hola, soy Sebastián Lara Barría</h2>
-              <p class="text-lg text-indigo-600 mb-4">Ingeniero en Informática | Máster en Ciencia de Datos | Candidato a Doctor en Ingeniería Civil</p>
-                <p class="mb-4 max-w-2xl">
-                  Soy un ingeniero en Informática con un Máster en Ciencia de Datos y actualmente candidato a Doctorado en Ingeniería Civil en la Universidad de Cantabria. Me especializo en arquitectura de software, desarrollo full-stack e inteligencia artificial aplicada, con un enfoque en visión artificial y modelos predictivos. Mi experiencia incluye el uso de tecnologías como Next.js, Node.js, MongoDB, Python, Keras, PyTorch y Scikit-learn, así como servicios en la nube como AWS, Azure y Google Cloud Platform.
+          <div class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12 py-8">
+            <div class="relative group">
+              <div class="absolute -inset-1 bg-gradient-to-r from-primary to-primary-light rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+              <img src="foto.jpg" alt="Foto de perfil" class="relative w-64 h-64 md:w-72 md:h-72 rounded-full object-cover shadow-2xl transform transition duration-500 group-hover:scale-105"/>
+            </div>
+            <div class="max-w-2xl">
+              <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+                <span class="gradient-text">Hola, soy Sebastián Lara Barría</span>
+              </h2>
+              <p class="text-xl md:text-2xl text-gray-600 mb-6 font-light">
+                Ingeniero en Informática | Máster en Ciencia de Datos | Candidato a Doctor en Ingeniería Civil
+              </p>
+              <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                Soy un ingeniero en Informática con un Máster en Ciencia de Datos y actualmente candidato a Doctorado en Ingeniería Civil en la Universidad de Cantabria. Me especializo en arquitectura de software, desarrollo full-stack e inteligencia artificial aplicada, con un enfoque en visión artificial y modelos predictivos. Mi experiencia incluye el uso de tecnologías como Next.js, Node.js, MongoDB, Python, Keras, PyTorch y Scikit-learn, así como servicios en la nube como AWS, Azure y Google Cloud Platform.
                 <br>
                   He trabajado en proyectos de digitalización y optimización de procesos, aplicando técnicas de aprendizaje automático y deep learning para mejorar la eficiencia operativa y la toma de decisiones informadas en sectores clave como infraestructura vial y sostenibilidad ambiental.
                 <br>
@@ -81,18 +189,18 @@
                 <br>
                   También tengo un compromiso profundo con proyectos que impacten positivamente en la sociedad y el medio ambiente. Me intereso especialmente en iniciativas de ciencia ciudadana, donde la tecnología se pone al servicio de comunidades locales para abordar problemáticas sociales, territoriales y ambientales. Creo firmemente en el uso ético y responsable de la inteligencia artificial y los sistemas de información para construir soluciones inclusivas y sostenibles.
                 </p>
-              <div class="flex flex-wrap gap-4 mt-4">
-                <a href="mailto:sebastianlarabarria@gmail.com" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  sebastianlarabarria@gmail.com
+              <div class="flex flex-wrap gap-6 mt-8">
+                <a href="mailto:sebastianlarabarria@gmail.com" class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <span class="font-medium">Email</span>
                 </a>
-                <a href="https://linkedin.com/in/slarab/"  target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                  LinkedIn
+                <a href="https://linkedin.com/in/slarab/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  <span class="font-medium">LinkedIn</span>
                 </a>
-                <a href="https://github.com/slarab"  target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  GitHub
+                <a href="https://github.com/slarab" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span class="font-medium">GitHub</span>
                 </a>
               </div>
             </div>
@@ -101,12 +209,14 @@
       `,
       education: `
         <section class="animate-fadeIn">
-          <h2 class="text-2xl font-bold mb-6">Formación Académica</h2>
-          <div class="space-y-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
-              <h3 class="text-xl font-semibold">Doctorado en Ingeniería Civil</h3>
-              <p class="text-indigo-600">Universidad de Cantabria</p>
-              <p class="text-sm text-gray-500 mt-1">Oct 2024 - Presente</p>
+          <h2 class="text-3xl font-bold mb-8 gradient-text">Formación Académica</h2>
+          <div class="space-y-8">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Doctorado en Ingeniería Civil</h3>
+                <p class="text-primary-light font-medium">Oct 2024 - Presente</p>
+              </div>
+              <p class="text-lg text-primary mb-2">Universidad de Cantabria</p>
               <ul class="mt-2 list-disc pl-5 text-gray-700">
                 <li>Tesis enfocada en detección, clasificación y caracterización de pavimento reciclado con visión artificial y aprendizaje profundo.</li>
                 <li>Participación en congresos de inteligencia artificial y pavimentos.</li>
@@ -139,12 +249,14 @@
       `,
       experience: `
         <section class="animate-fadeIn">
-          <h2 class="text-2xl font-bold mb-6">Experiencia Laboral</h2>
-          <div class="space-y-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
-              <h3 class="text-xl font-semibold">Arquitecto y Desarrollador de Software</h3>
-              <p class="text-indigo-600">Grupo GITECO, Universidad de Cantabria</p>
-              <p class="text-sm text-gray-500 mt-1">Oct 2024 - Presente</p>
+          <h2 class="text-3xl font-bold mb-8 gradient-text">Experiencia Laboral</h2>
+          <div class="space-y-8">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Arquitecto y Desarrollador de Software</h3>
+                <p class="text-primary-light font-medium">Oct 2024 - Presente</p>
+              </div>
+              <p class="text-lg text-primary mb-4">Grupo GITECO, Universidad de Cantabria</p>
               <ul class="mt-2 list-disc pl-5 text-gray-700">
                 <li>Diseño e implementación de soluciones de software para investigación en infraestructura vial.</li>
                 <li>Desarrollo de algoritmos de inteligencia artificial y deep learning para detección de deterioros en pavimentos.</li>
@@ -216,11 +328,12 @@
       `,
       projects: `
         <section class="animate-fadeIn">
-          <h2 class="text-2xl font-bold mb-6">Proyectos Destacados</h2>
-          <div class="space-y-6">
-<div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
-  <h3 class="text-xl font-semibold">Voces Territorios</h3>
-  <p class="text-sm text-gray-500 mt-1">Madrid, España | MIRCo UAM | Ene 2023 - Dic 2024</p>
+          <h2 class="text-3xl font-bold mb-8 gradient-text">Proyectos Destacados</h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+              <div class="flex flex-col mb-4">
+                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors mb-2">Voces Territorios</h3>
+                <p class="text-primary-light font-medium">Madrid, España | MIRCo UAM | Ene 2023 - Dic 2024</p>
   <ul class="mt-2 list-disc pl-5 text-gray-700">
     <li>Desarrollo de una plataforma de ciencia ciudadana que permite registrar y visualizar luchas sociales por el territorio en diferentes regiones del mundo.</li>
     <li>Incorporación de funcionalidades multimedia para recopilar textos, fotos, audios y videos desde comunidades locales.</li>
@@ -273,18 +386,18 @@
       `,
       skills: `
         <section class="animate-fadeIn">
-          <h2 class="text-2xl font-bold mb-6">Habilidades Técnicas</h2>
-          <div class="space-y-6">
-            <div>
-              <h3 class="font-semibold mb-2">Programación</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Python (PyTorch, TensorFlow, Scikit-learn)</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">JavaScript (Next.js, Node.js)</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">MongoDB</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">SQL</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Solidity</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">C/C++</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Java</span>
+          <h2 class="text-3xl font-bold mb-8 gradient-text">Habilidades Técnicas</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="section-card p-8">
+              <h3 class="text-xl font-semibold mb-6 text-primary">Programación</h3>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">Python (PyTorch, TensorFlow, Scikit-learn)</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">JavaScript (Next.js, Node.js)</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">MongoDB</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">SQL</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">Solidity</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">C/C++</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">Java</span>
               </div>
             </div>
             <div>
