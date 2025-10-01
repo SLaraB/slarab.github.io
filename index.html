@@ -113,6 +113,7 @@
 
     .gradient-text {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -329,56 +330,119 @@
       projects: `
         <section class="animate-fadeIn">
           <h2 class="text-3xl font-bold mb-8 gradient-text">Proyectos Destacados</h2>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="space-y-8">
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
-              <div class="flex flex-col mb-4">
-                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors mb-2">Voces Territorios</h3>
-                <p class="text-primary-light font-medium">Madrid, España | MIRCo UAM | Ene 2023 - Dic 2024</p>
-  <ul class="mt-2 list-disc pl-5 text-gray-700">
-    <li>Desarrollo de una plataforma de ciencia ciudadana que permite registrar y visualizar luchas sociales por el territorio en diferentes regiones del mundo.</li>
-    <li>Incorporación de funcionalidades multimedia para recopilar textos, fotos, audios y videos desde comunidades locales.</li>
-    <li>Diseño e implementación del frontend móvil con React Native, garantizando una experiencia de usuario accesible y fluida.</li>
-    <li>Construcción del backend usando MongoDB para almacenar y organizar los datos georreferenciados.</li>
-    <li>Desarrollo del sitio web principal con Next.js, integrando mapas interactivos y visualización de contenidos comunitarios.</li>
-    <li>Facilitación de un espacio colaborativo que refleja la diversidad cultural, lingüística y de perspectivas en contextos de desigualdad territorial.</li>
-  </ul>
-  <div class="flex flex-wrap gap-2 mt-4">
-    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">React Native</span>
-    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">MongoDB</span>
-    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Next.js</span>
-    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">API REST</span>
-    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Geolocalización</span>
-    <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Ciencia Ciudadana</span>
-  </div>
-</div>
-            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
-              <h3 class="text-xl font-semibold">Análisis Territorial de Incendios Forestales</h3>
-              <p class="text-sm text-gray-500 mt-1">Valdivia, Chile | Universidad Austral de Chile | Abr 2023 - Ago 2024</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700">
-                <li>Desarrollo de modelos de redes neuronales convolucionales para analizar imágenes de incendios forestales.</li>
-                <li>Evaluación de algoritmos para identificar patrones visuales en conjuntos de datos comunitarios.</li>
-                <li>Uso de plataformas de ciencia ciudadana para recopilar datos de percepción comunitaria.</li>
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold group-hover:text-primary transition-colors mb-2">Voces Territorios</h3>
+                  <p class="text-primary-light font-medium mb-4">Madrid, España | MIRCo UAM | Ene 2023 - Dic 2024</p>
+                </div>
+                <div class="flex gap-3">
+                  <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                </div>
+              </div>
+              <ul class="space-y-2 text-gray-700 mb-6">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Desarrollo de una plataforma de ciencia ciudadana que permite registrar y visualizar luchas sociales por el territorio en diferentes regiones del mundo.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Incorporación de funcionalidades multimedia para recopilar textos, fotos, audios y videos desde comunidades locales.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Diseño e implementación del frontend móvil con React Native, garantizando una experiencia de usuario accesible y fluida.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Construcción del backend usando MongoDB para almacenar y organizar los datos georreferenciados.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Desarrollo del sitio web principal con Next.js, integrando mapas interactivos y visualización de contenidos comunitarios.</span>
+                </li>
               </ul>
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Python</span>
-                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">TensorFlow</span>
-                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">PyTorch</span>
-                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Visualización de Datos</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold rounded shadow-sm">React Native</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">MongoDB</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-gray-800 to-black text-white text-xs font-semibold rounded shadow-sm">Next.js</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">API REST</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-xs font-semibold rounded shadow-sm">Geolocalización</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Ciencia Ciudadana</span>
               </div>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
-              <h3 class="text-xl font-semibold">Desarrollo de Plataforma de Ciencia Ciudadana</h3>
-              <p class="text-sm text-gray-500 mt-1">Valdivia, Chile | Universidad Austral de Chile | Abr 2022 - Dic 2022</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700">
-                <li>Diseño y migración de aplicación web a móvil para registrar datos comunitarios.</li>
-                <li>Integración de blockchain para certificar registros y garantizar seguridad.</li>
-                <li>Implementación de API y tablero analítico para visualización de datos recolectados.</li>
+
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold group-hover:text-primary transition-colors mb-2">Análisis Territorial de Incendios Forestales</h3>
+                  <p class="text-primary-light font-medium mb-4">Valdivia, Chile | Universidad Austral de Chile | Abr 2023 - Ago 2024</p>
+                </div>
+                <div class="flex gap-3">
+                  <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  </a>
+                </div>
+              </div>
+              <ul class="space-y-2 text-gray-700 mb-6">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Desarrollo de modelos de redes neuronales convolucionales para analizar imágenes de incendios forestales.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Evaluación de algoritmos para identificar patrones visuales en conjuntos de datos comunitarios.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Uso de plataformas de ciencia ciudadana para recopilar datos de percepción comunitaria.</span>
+                </li>
               </ul>
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">React Native</span>
-                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">MongoDB</span>
-                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Blockchain</span>
-                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">API REST</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Python</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">TensorFlow</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-semibold rounded shadow-sm">PyTorch</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">Visualización de Datos</span>
+              </div>
+            </div>
+
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold group-hover:text-primary transition-colors mb-2">Plataforma de Ciencia Ciudadana</h3>
+                  <p class="text-primary-light font-medium mb-4">Valdivia, Chile | Universidad Austral de Chile | Abr 2022 - Dic 2022</p>
+                </div>
+                <div class="flex gap-3">
+                  <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  </a>
+                </div>
+              </div>
+              <ul class="space-y-2 text-gray-700 mb-6">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Diseño y migración de aplicación web a móvil para registrar datos comunitarios.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Integración de blockchain para certificar registros y garantizar seguridad.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Implementación de API y tablero analítico para visualización de datos recolectados.</span>
+                </li>
+              </ul>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold rounded shadow-sm">React Native</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">MongoDB</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-xs font-semibold rounded shadow-sm">Blockchain</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">API REST</span>
               </div>
             </div>
           </div>
@@ -386,43 +450,135 @@
       `,
       skills: `
         <section class="animate-fadeIn">
-          <h2 class="text-3xl font-bold mb-8 gradient-text">Habilidades Técnicas</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="section-card p-8">
-              <h3 class="text-xl font-semibold mb-6 text-primary">Programación</h3>
-              <div class="flex flex-wrap gap-3">
-                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">Python (PyTorch, TensorFlow, Scikit-learn)</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">JavaScript (Next.js, Node.js)</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">MongoDB</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">SQL</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">Solidity</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">C/C++</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-primary font-medium transform hover:scale-105 transition-all duration-300">Java</span>
-              </div>
+          <h2 class="text-3xl font-bold mb-8 gradient-text">💻 Tech Stack</h2>
+          
+          <div class="section-card p-8 mb-8">
+            <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"/><path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clip-rule="evenodd"/></svg>
+              Lenguajes y Frameworks
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+              <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript" />
+              <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+              <img src="https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white" alt="R" />
+              <img src="https://img.shields.io/badge/bash_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash" />
+              <img src="https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell" />
+              <img src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown" />
+              <img src="https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX" />
             </div>
-            <div>
-              <h3 class="font-semibold mb-2">Herramientas y Tecnologías</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Apache</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Azure</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">AWS</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">GC</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Docker</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Git</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Linux</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Spark</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Power BI</span>
-              </div>
+
+            <div class="flex flex-wrap gap-2">
+              <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
+              <img src="https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React Native" />
+              <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+              <img src="https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D" alt="Vue.js" />
+              <img src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
+              <img src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
+              <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" alt="Flutter" />
+              <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
             </div>
-            <div>
-              <h3 class="font-semibold mb-2">Habilidades Blandas</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Gestión del tiempo</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Trabajo en equipo</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Resolución de problemas</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Pensamiento crítico</span>
-                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Liderazgo técnico</span>
-              </div>
+          </div>
+
+          <div class="section-card p-8 mb-8">
+            <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"/></svg>
+              Bases de Datos
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+              <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+              <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+              <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white" alt="MariaDB" />
+              <img src="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+              <img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white" alt="Sequelize" />
+            </div>
+          </div>
+
+          <div class="section-card p-8 mb-8">
+            <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+              AI/ML y Data Science
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch" />
+              <img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white" alt="TensorFlow" />
+              <img src="https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white" alt="Keras" />
+              <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn" />
+              <img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" />
+              <img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />
+              <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
+              <img src="https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black" alt="Matplotlib" />
+              <img src="https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly" />
+              <img src="https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white" alt="Scipy" />
+              <img src="https://img.shields.io/badge/mlflow-%23d9ead3.svg?style=for-the-badge&logo=numpy&logoColor=blue" alt="MLflow" />
+            </div>
+          </div>
+
+          <div class="section-card p-8 mb-8">
+            <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"/></svg>
+              Cloud y DevOps
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
+              <img src="https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure" />
+              <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+              <img src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white" alt="Apache" />
+              <img src="https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx" />
+              <img src="https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white" alt="Jenkins" />
+              <img src="https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white" alt="Anaconda" />
+              <img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" alt="NPM" />
+              <img src="https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD" alt="Nodemon" />
+            </div>
+          </div>
+
+          <div class="section-card p-8 mb-8">
+            <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              Herramientas de Desarrollo
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+              <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+              <img src="https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white" alt="GitLab" />
+              <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+              <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
+              <img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
+              <img src="https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white" alt="CMake" />
+              <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white" alt="Notion" />
+              <img src="https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI" />
+            </div>
+          </div>
+
+          <div class="section-card p-8 mb-8">
+            <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd"/></svg>
+              Diseño y Multimedia
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <img src="https://img.shields.io/badge/adobe-%23FF0000.svg?style=for-the-badge&logo=adobe&logoColor=white" alt="Adobe" />
+              <img src="https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white" alt="Photoshop" />
+              <img src="https://img.shields.io/badge/adobe%20illustrator-%23FF9A00.svg?style=for-the-badge&logo=adobe%20illustrator&logoColor=white" alt="Illustrator" />
+              <img src="https://img.shields.io/badge/Adobe%20After%20Effects-9999FF.svg?style=for-the-badge&logo=Adobe%20After%20Effects&logoColor=white" alt="After Effects" />
+              <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
+              <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white" alt="Canva" />
+              <img src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white" alt="Blender" />
+              <img src="https://img.shields.io/badge/Sketch-FFB387?style=for-the-badge&logo=sketch&logoColor=black" alt="Sketch" />
+            </div>
+          </div>
+
+          <div class="section-card p-8">
+            <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/></svg>
+              Otros
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <img src="https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white" alt="Unity" />
+              <img src="https://img.shields.io/badge/OpenGL-white?logo=OpenGL&style=for-the-badge" alt="OpenGL" />
+              <img src="https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=for-the-badge&logo=nVIDIA&logoColor=white" alt="NVIDIA" />
+              <img src="https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white" alt="Arduino" />
+              <img src="https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37" alt="Expo" />
             </div>
           </div>
         </section>
