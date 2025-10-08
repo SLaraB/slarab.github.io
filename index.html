@@ -111,6 +111,17 @@
       flex: 1;
     }
 
+    section {
+      min-height: 100vh;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      scroll-margin-top: 100px;
+    }
+
+    section:first-child {
+      scroll-margin-top: 80px;
+    }
+
     .gradient-text {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       background-clip: text;
@@ -144,18 +155,33 @@
       <div class="flex flex-col md:flex-row justify-between items-center">
         <h1 class="text-2xl font-bold gradient-text mb-4 md:mb-0 tracking-tight">Sebastián Lara Barría</h1>
         <ul class="flex flex-wrap justify-center gap-2 md:gap-4">
-          <li><button onclick="showSection('about')" id="btn-about" class="nav-button text-gray-700 hover:text-primary active px-3 py-2 rounded-full text-sm md:text-base font-medium">Sobre mí</button></li>
-          <li><button onclick="showSection('education')" id="btn-education" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Educación</button></li>
-          <li><button onclick="showSection('experience')" id="btn-experience" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Experiencia</button></li>
-          <li><button onclick="showSection('projects')" id="btn-projects" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Proyectos</button></li>
-          <li><button onclick="showSection('skills')" id="btn-skills" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Habilidades</button></li>
+          <li><a href="#about" id="btn-about" class="nav-button text-gray-700 hover:text-primary active px-3 py-2 rounded-full text-sm md:text-base font-medium">Sobre mí</a></li>
+          <li><a href="#education" id="btn-education" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Educación</a></li>
+          <li><a href="#experience" id="btn-experience" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Experiencia</a></li>
+          <li><a href="#projects" id="btn-projects" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Proyectos</a></li>
+          <li><a href="#skills" id="btn-skills" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Habilidades</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main id="main-content" class="max-w-7xl mx-auto px-6 pt-28 pb-16 flex-grow"></main>
+  <main id="main-content" class="max-w-7xl mx-auto px-6 pt-28 pb-16 flex-grow">
+    <!-- Sección Sobre mí -->
+    <section id="about" class="animate-fadeIn"></section>
+    
+    <!-- Sección Educación -->
+    <section id="education" class="animate-fadeIn"></section>
+    
+    <!-- Sección Experiencia -->
+    <section id="experience" class="animate-fadeIn"></section>
+    
+    <!-- Sección Proyectos -->
+    <section id="projects" class="animate-fadeIn"></section>
+    
+    <!-- Sección Habilidades -->
+    <section id="skills" class="animate-fadeIn"></section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 py-6">
@@ -166,90 +192,331 @@
 
   <!-- Script para mostrar secciones dinámicamente -->
   <script>
-    const sections = {
+    const sectionsContent = {
       about: `
-        <section class="animate-fadeIn">
-          <div class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12 py-8">
-            <div class="relative group">
-              <div class="absolute -inset-1 bg-gradient-to-r from-primary to-primary-light rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-              <img src="foto.jpg" alt="Foto de perfil" class="relative w-64 h-64 md:w-72 md:h-72 rounded-full object-cover shadow-2xl transform transition duration-500 group-hover:scale-105"/>
-            </div>
-            <div class="max-w-2xl">
+        <div class="animate-fadeIn">
+          <!-- Hero Section con foto arriba -->
+          <div class="section-card p-8 md:p-12 mb-8">
+            <div class="flex flex-col items-center text-center mb-8">
+              <div class="relative group mb-6">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-primary-light rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                <img src="foto.jpg" alt="Foto de perfil" class="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl transform transition duration-500 group-hover:scale-105 border-4 border-white"/>
+              </div>
+              
               <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-                <span class="gradient-text">Hola, soy Sebastián Lara Barría</span>
+                <span class="gradient-text">Sebastián Lara Barría</span>
               </h2>
-              <p class="text-xl md:text-2xl text-gray-600 mb-6 font-light">
-                Ingeniero en Informática | Máster en Ciencia de Datos | Candidato a Doctor en Ingeniería Civil
-              </p>
-              <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                Soy un ingeniero en Informática con un Máster en Ciencia de Datos y actualmente candidato a Doctorado en Ingeniería Civil en la Universidad de Cantabria. Me especializo en arquitectura de software, desarrollo full-stack e inteligencia artificial aplicada, con un enfoque en visión artificial y modelos predictivos. Mi experiencia incluye el uso de tecnologías como Next.js, Node.js, MongoDB, Python, Keras, PyTorch y Scikit-learn, así como servicios en la nube como AWS, Azure y Google Cloud Platform.
-                <br>
-                  He trabajado en proyectos de digitalización y optimización de procesos, aplicando técnicas de aprendizaje automático y deep learning para mejorar la eficiencia operativa y la toma de decisiones informadas en sectores clave como infraestructura vial y sostenibilidad ambiental.
-                <br>
-                  Más allá del código, tengo una fuerte vocación docente y he sido tutor en asignaturas como Cálculo en una variable, Sistemas de Información, Investigación Operativa y Programación Orientada a Objetos. Me apasiona compartir conocimientos y fomentar el aprendizaje colaborativo como parte integral de mi desarrollo profesional.
-                <br>
-                  También tengo un compromiso profundo con proyectos que impacten positivamente en la sociedad y el medio ambiente. Me intereso especialmente en iniciativas de ciencia ciudadana, donde la tecnología se pone al servicio de comunidades locales para abordar problemáticas sociales, territoriales y ambientales. Creo firmemente en el uso ético y responsable de la inteligencia artificial y los sistemas de información para construir soluciones inclusivas y sostenibles.
-                </p>
-              <div class="flex flex-wrap gap-6 mt-8">
-                <a href="mailto:sebastianlarabarria@gmail.com" class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  <span class="font-medium">Email</span>
+              
+              <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full shadow-md">Ingeniero en Informática</span>
+                <span class="px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-semibold rounded-full shadow-md">Máster en Ciencia de Datos</span>
+                <span class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-sm font-semibold rounded-full shadow-md">Candidato a Doctor</span>
+              </div>
+              
+              <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:sebastianlarabarria@gmail.com" class="flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-red-500 text-red-600 rounded-lg hover:bg-red-500 hover:text-white hover:border-red-500 transform hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                  <span class="font-medium">Contactar</span>
                 </a>
-                <a href="https://linkedin.com/in/slarab/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <a href="https://linkedin.com/in/slarab/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transform hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
                   <span class="font-medium">LinkedIn</span>
                 </a>
-                <a href="https://github.com/slarab" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <a href="https://github.com/slarab" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-gray-700 text-gray-700 rounded-lg hover:bg-gray-700 hover:text-white transform hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
                   <span class="font-medium">GitHub</span>
                 </a>
               </div>
             </div>
           </div>
-        </section>
-      `,
-      education: `
-        <section class="animate-fadeIn">
-          <h2 class="text-3xl font-bold mb-8 gradient-text">Formación Académica</h2>
-          <div class="space-y-8">
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
-              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Doctorado en Ingeniería Civil</h3>
-                <p class="text-primary-light font-medium">Oct 2024 - Presente</p>
+          
+          <!-- Secciones de información -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="section-card p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Especialización</h3>
               </div>
-              <p class="text-lg text-primary mb-2">Universidad de Cantabria</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700">
-                <li>Tesis enfocada en detección, clasificación y caracterización de pavimento reciclado con visión artificial y aprendizaje profundo.</li>
-                <li>Participación en congresos de inteligencia artificial y pavimentos.</li>
-              </ul>
+              <p class="text-gray-600 leading-relaxed">
+                Me especializo en <strong class="text-primary">arquitectura de software</strong>, <strong class="text-primary">desarrollo full-stack</strong> e <strong class="text-primary">inteligencia artificial aplicada</strong>, con un enfoque particular en visión artificial y modelos predictivos para la resolución de problemas complejos. Mi experiencia técnica abarca desde el diseño de sistemas escalables hasta la implementación de soluciones de machine learning y deep learning en entornos de producción.
+                <br><br>
+                Domino tecnologías modernas como <strong class="text-primary">Next.js, React, Node.js y MongoDB</strong> para el desarrollo de aplicaciones web y móviles, así como frameworks especializados en IA como <strong class="text-primary">PyTorch, TensorFlow, Keras y Scikit-learn</strong> para la construcción de modelos predictivos robustos. Además, tengo amplia experiencia trabajando con servicios en la nube como <strong class="text-primary">AWS, Azure y Google Cloud Platform</strong>, implementando soluciones que requieren procesamiento a gran escala, almacenamiento distribuido y despliegue continuo de modelos de inteligencia artificial.
+              </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
-              <h3 class="text-xl font-semibold">Máster en Informática, mención Ciencia de Datos</h3>
-              <p class="text-indigo-600">Universidad Austral de Chile</p>
-              <p class="text-sm text-gray-500 mt-1">Abr 2023 - Ago 2024</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700">
-                <li>Graduado con distinción.</li>
-                <li>Tesis enfocada en análisis territorial y percepción comunitaria de imágenes en contexto de incendios forestales.</li>
-                <li>Especialización en aprendizaje automático, redes neuronales y análisis de grandes volúmenes de datos.</li>
-                <li>Participación en congresos internacionales de Informática.</li>
-              </ul>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
-              <h3 class="text-xl font-semibold">Ingeniería en Informática</h3>
-              <p class="text-indigo-600">Universidad Austral de Chile</p>
-              <p class="text-sm text-gray-500 mt-1">Mar 2015 - Dic 2022</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700">
-                <li>Graduado con distinción.</li>
-                <li>Participación activa en proyectos interdisciplinarios y desarrollo de software.</li>
-                <li>Participación en Centro de Estudiantes de la Facultad de Ciencias de la Ingeniería.</li>
-                <li>Tutor en asignaturas como Cálculo en una variable, Sistemas de Información, Investigación Operativa y Programación Orientada a Objetos.</li>
-              </ul>
+            
+            <div class="section-card p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-gradient-to-br from-green-500 to-green-600 rounded-lg">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Experiencia Profesional</h3>
+              </div>
+              <p class="text-gray-600 leading-relaxed">
+                A lo largo de mi trayectoria profesional, he liderado y participado en <strong class="text-primary">proyectos de transformación digital y optimización de procesos</strong>, aplicando técnicas avanzadas de aprendizaje automático, deep learning y visión artificial para mejorar la eficiencia operativa y facilitar la toma de decisiones basada en datos en sectores estratégicos como la <strong class="text-primary">infraestructura vial</strong> y la <strong class="text-primary">sostenibilidad ambiental</strong>.
+                <br><br>
+                Mi experiencia incluye el desarrollo de <strong class="text-primary">sistemas de detección y clasificación automática</strong> de deterioros en pavimentos utilizando redes neuronales convolucionales, la implementación de plataformas de ciencia ciudadana para la recopilación y análisis de datos comunitarios, y la construcción de modelos predictivos multivariables para evaluar el impacto ambiental de materiales reciclados. He trabajado en entornos colaborativos e interdisciplinarios, coordinando equipos de desarrollo y adaptando soluciones tecnológicas a las necesidades específicas de cada proyecto.
+              </p>
             </div>
           </div>
-        </section>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="section-card p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Docencia</h3>
+              </div>
+              <p class="text-gray-600 leading-relaxed">
+                Como <strong class="text-primary">profesor de Ingeniería de Software en la Universidad Austral de Chile</strong>, he impartido cursos especializados sobre desarrollo de aplicaciones modernas con tecnologías web (React, Node.js, Express), diseño y gestión de bases de datos relacionales y no relacionales, así como metodologías ágiles de desarrollo (Scrum, Kanban).
+                <br><br>
+                Mi enfoque pedagógico se centra en el <strong class="text-primary">aprendizaje basado en proyectos</strong>, combinando fundamentos teóricos sólidos con prácticas intensivas que replican escenarios reales de la industria. Fomento activamente el pensamiento crítico, la colaboración en equipo y el uso de herramientas modernas de control de versiones (Git/GitHub), integración continua y despliegue automatizado. Mi objetivo es preparar profesionales capaces de enfrentar los desafíos actuales del desarrollo de software con competencias técnicas y habilidades sociales bien desarrolladas.
+              </p>
+            </div>
+            
+            <div class="section-card p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Compromiso Social</h3>
+              </div>
+              <p class="text-gray-600 leading-relaxed">
+                Tengo un compromiso profundo con proyectos que <strong class="text-primary">generen un impacto positivo en la sociedad y el medio ambiente</strong>. Me intereso especialmente en iniciativas de <strong class="text-primary">ciencia ciudadana</strong>, donde la tecnología se pone al servicio de comunidades locales para empoderar a las personas en la recopilación, análisis y uso de datos que afectan directamente su entorno y calidad de vida.
+                <br><br>
+                He desarrollado plataformas que facilitan la participación ciudadana en proyectos de investigación ambiental y territorial, permitiendo que las voces de las comunidades sean escuchadas y consideradas en procesos de toma de decisiones. Creo firmemente en el <strong class="text-primary">uso ético, transparente y responsable de la inteligencia artificial</strong>, promoviendo el desarrollo de soluciones tecnológicas que sean inclusivas, accesibles y sostenibles, y que contribuyan a la equidad social y al cuidado del planeta para las generaciones futuras.
+              </p>
+            </div>
+          </div>
+        </div>
+      `,
+      education: `
+        <div class="animate-fadeIn">
+          <h2 class="text-3xl font-bold mb-8 gradient-text">🎓 Formación Académica</h2>
+          <div class="space-y-8">
+            <!-- Doctorado -->
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full"></div>
+              <div class="flex items-start gap-4 mb-4">
+                <div class="p-3 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex-shrink-0">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">Doctorado en Ingeniería Civil</h3>
+                    <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-semibold rounded-full shadow-sm">En curso</span>
+                  </div>
+                  <p class="text-lg text-primary font-semibold mb-1">Universidad de Cantabria</p>
+                  <p class="text-gray-500 text-sm mb-4">Oct 2024 - Presente</p>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+                  Enfoque de Investigación
+                </h4>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Detección, clasificación y caracterización de pavimento reciclado con visión artificial y aprendizaje profundo</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Participación en congresos internacionales de inteligencia artificial y pavimentos</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                  Habilidades Técnicas
+                </h4>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-3 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-semibold rounded shadow-sm">PyTorch</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">TensorFlow</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Computer Vision</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">Deep Learning</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Python</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">AWS</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">OpenCV</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-xs font-semibold rounded shadow-sm">Investigación Científica</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-xs font-semibold rounded shadow-sm">Digitalización en Ingeniería Civil</span>
+
+                </div>
+                
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2 mt-4">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
+                  Habilidades Sociales
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Trabajo en Equipo</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-pink-500 to-pink-600 text-white text-xs font-semibold rounded shadow-sm">Investigación Interdisciplinaria</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-semibold rounded shadow-sm">Adaptabilidad</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-indigo-400 to-indigo-500 text-white text-xs font-semibold rounded shadow-sm">Comunicación Científica</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-400 to-blue-500 text-white text-xs font-semibold rounded shadow-sm">Colaboración Internacional</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Máster -->
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full"></div>
+              <div class="flex items-start gap-4 mb-4">
+                <div class="p-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex-shrink-0">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">Máster en Informática, mención Ciencia de Datos</h3>
+                    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm font-semibold rounded-full shadow-sm">Distinción</span>
+                  </div>
+                  <p class="text-lg text-primary font-semibold mb-1">Universidad Austral de Chile</p>
+                  <p class="text-gray-500 text-sm mb-4">Abr 2023 - Ago 2024</p>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+                  Logros Principales
+                </h4>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Tesis sobre análisis territorial y percepción comunitaria de imágenes en contexto de incendios forestales</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Especialización en aprendizaje automático, redes neuronales y análisis de grandes volúmenes de datos</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Participación en congresos internacionales de Informática</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                  Habilidades Técnicas
+                </h4>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-3 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-semibold rounded shadow-sm">PyTorch</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">TensorFlow</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-orange-600 to-orange-700 text-white text-xs font-semibold rounded shadow-sm">Scikit-learn</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Python</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">Machine Learning</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold rounded shadow-sm">Data Analysis</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-xs font-semibold rounded shadow-sm">R</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-pink-500 to-pink-600 text-white text-xs font-semibold rounded shadow-sm">Big Data</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Pandas</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-xs font-semibold rounded shadow-sm">NumPy</span>
+                </div>
+                
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2 mt-4">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
+                  Habilidades Sociales
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Trabajo en Equipo</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-pink-400 to-pink-500 text-white text-xs font-semibold rounded shadow-sm">Resolución de Problemas</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-xs font-semibold rounded shadow-sm">Pensamiento Analítico</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-semibold rounded shadow-sm">Investigación</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-indigo-400 to-indigo-500 text-white text-xs font-semibold rounded shadow-sm">Comunicación Científica</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-400 to-blue-500 text-white text-xs font-semibold rounded shadow-sm">Gestión de Proyectos</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ingeniería -->
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-full"></div>
+              <div class="flex items-start gap-4 mb-4">
+                <div class="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex-shrink-0">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">Ingeniería en Informática</h3>
+                    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm font-semibold rounded-full shadow-sm">Distinción</span>
+                  </div>
+                  <p class="text-lg text-primary font-semibold mb-1">Universidad Austral de Chile</p>
+                  <p class="text-gray-500 text-sm mb-4">Mar 2015 - Dic 2022</p>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+                  Destacados
+                </h4>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Participación activa en proyectos interdisciplinarios y desarrollo de software</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Participación en Centro de Estudiantes de la Facultad de Ciencias de la Ingeniería</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Tutor en: Cálculo, Sistemas de Información, Investigación Operativa y POO</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                  Habilidades Técnicas
+                </h4>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Java</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">C/C++</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Python</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-xs font-semibold rounded shadow-sm">JavaScript</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">SQL</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">Git</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">Algoritmos</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-xs font-semibold rounded shadow-sm">Estructuras de Datos</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-semibold rounded shadow-sm">POO</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Software Engineering</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-pink-500 to-pink-600 text-white text-xs font-semibold rounded shadow-sm">Bases de Datos</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-xs font-semibold rounded shadow-sm">Redes</span>
+                </div>
+                
+                <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2 mt-4">
+                  <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
+                  Habilidades Sociales
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Liderazgo</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-pink-400 to-pink-500 text-white text-xs font-semibold rounded shadow-sm">Trabajo en Equipo</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-xs font-semibold rounded shadow-sm">Docencia</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-semibold rounded shadow-sm">Mentoría</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-indigo-400 to-indigo-500 text-white text-xs font-semibold rounded shadow-sm">Servicio Comunitario</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-blue-400 to-blue-500 text-white text-xs font-semibold rounded shadow-sm">Organización</span>
+                  <span class="px-3 py-1 bg-gradient-to-r from-green-400 to-green-500 text-white text-xs font-semibold rounded shadow-sm">Ética Profesional</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       `,
       experience: `
-        <section class="animate-fadeIn">
+        <div class="animate-fadeIn">
           <h2 class="text-3xl font-bold mb-8 gradient-text">Experiencia Laboral</h2>
           <div class="space-y-8">
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
@@ -334,10 +601,10 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
       `,
       projects: `
-        <section class="animate-fadeIn">
+        <div class="animate-fadeIn">
           <h2 class="text-3xl font-bold mb-8 gradient-text">Proyectos Destacados</h2>
           <div class="space-y-8">
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
@@ -459,10 +726,10 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
       `,
       skills: `
-        <section class="animate-fadeIn">
+        <div class="animate-fadeIn">
           <h2 class="text-3xl font-bold mb-8 gradient-text">💻 Tech Stack</h2>
           
           <div class="section-card p-8 mb-8">
@@ -598,7 +865,7 @@
           <div class="section-card p-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
-              Habilidades Blandas
+              Habilidades Sociales
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
@@ -625,20 +892,136 @@
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" clip-rule="evenodd"/></svg>
                 <span class="font-medium text-gray-700">Comunicación efectiva</span>
               </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Organización y planificación</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+                <span class="font-medium text-gray-700">Creatividad e innovación</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Adaptabilidad</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Proactividad</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Empatía</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Atención al detalle</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+                <span class="font-medium text-gray-700">Orientación a resultados</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/></svg>
+                <span class="font-medium text-gray-700">Ética profesional</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Colaboración interdisciplinaria</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Visión estratégica</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Mentoría y enseñanza</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Aprendizaje continuo</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Integridad y confiabilidad</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"/></svg>
+                <span class="font-medium text-gray-700">Pasión por la tecnología</span>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
       `
     };
 
-    function showSection(section) {
-      document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active'));
-      document.getElementById('btn-' + section).classList.add('active');
-      document.getElementById("main-content").innerHTML = sections[section];
+    // Cargar todas las secciones al inicio
+    function loadAllSections() {
+      Object.keys(sectionsContent).forEach(sectionKey => {
+        const sectionElement = document.getElementById(sectionKey);
+        if (sectionElement) {
+          sectionElement.innerHTML = sectionsContent[sectionKey];
+        }
+      });
     }
 
-    // Mostrar por defecto
-    showSection("about");
+    // Detectar qué sección está visible y actualizar el menú
+    function updateActiveSection() {
+      const sections = document.querySelectorAll('main section[id]');
+      const navButtons = document.querySelectorAll('.nav-button');
+      
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const scrollPosition = window.scrollY + 150; // Offset para header
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('href') === '#' + currentSection) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    // Scroll suave al hacer clic en los enlaces
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Evento de scroll para actualizar sección activa
+    window.addEventListener('scroll', updateActiveSection);
+
+    // Cargar todas las secciones cuando la página esté lista
+    document.addEventListener('DOMContentLoaded', function() {
+      loadAllSections();
+      updateActiveSection();
+    });
+
+    // Por si el script se ejecuta después del DOMContentLoaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        loadAllSections();
+        updateActiveSection();
+      });
+    } else {
+      loadAllSections();
+      updateActiveSection();
+    }
   </script>
 </body>
 </html>
