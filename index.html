@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- ============================================ -->
+<!-- HEAD: Metadatos, estilos y configuración -->
+<!-- ============================================ -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -148,8 +151,18 @@
     }
   </style>
 </head>
+<!-- ============================================ -->
+<!-- FIN HEAD -->
+<!-- ============================================ -->
+
+<!-- ============================================ -->
+<!-- BODY: Contenido principal de la página -->
+<!-- ============================================ -->
 <body class="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
-  <!-- Header -->
+  
+  <!-- ======================================== -->
+  <!-- HEADER: Barra de navegación superior -->
+  <!-- ======================================== -->
   <header class="fixed w-full bg-white/95 backdrop-blur shadow-lg z-50">
     <nav class="max-w-7xl mx-auto px-6 py-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
@@ -164,35 +177,45 @@
       </div>
     </nav>
   </header>
+  <!-- ======================================== -->
+  <!-- FIN HEADER -->
+  <!-- ======================================== -->
 
-  <!-- Main Content -->
+  <!-- ======================================== -->
+  <!-- MAIN: Contenido principal -->
+  <!-- ======================================== -->
   <main id="main-content" class="max-w-7xl mx-auto px-6 pt-28 pb-16 flex-grow">
-    <!-- Sección Sobre mí -->
+    <!-- Secciones vacías que se llenan dinámicamente con JavaScript -->
     <section id="about" class="animate-fadeIn"></section>
-    
-    <!-- Sección Educación -->
     <section id="education" class="animate-fadeIn"></section>
-    
-    <!-- Sección Experiencia -->
     <section id="experience" class="animate-fadeIn"></section>
-    
-    <!-- Sección Proyectos -->
     <section id="projects" class="animate-fadeIn"></section>
-    
-    <!-- Sección Habilidades -->
     <section id="skills" class="animate-fadeIn"></section>
   </main>
+  <!-- ======================================== -->
+  <!-- FIN MAIN -->
+  <!-- ======================================== -->
 
-  <!-- Footer -->
+  <!-- ======================================== -->
+  <!-- FOOTER: Pie de página -->
+  <!-- ======================================== -->
   <footer class="bg-white border-t border-gray-200 py-6">
     <div class="max-w-6xl mx-auto px-6 text-center text-gray-500 text-sm">
       &copy; 2025 Sebastián Lara Barría. Todos los derechos reservados.
     </div>
   </footer>
+  <!-- ======================================== -->
+  <!-- FIN FOOTER -->
+  <!-- ======================================== -->
 
-  <!-- Script para mostrar secciones dinámicamente -->
+  <!-- ======================================== -->
+  <!-- JAVASCRIPT: Contenido y lógica dinámica -->
+  <!-- ======================================== -->
   <script>
     const sectionsContent = {
+      // ================================================
+      // SECCIÓN 1: SOBRE MÍ (About)
+      // ================================================
       about: `
         <div class="animate-fadeIn">
           <!-- Hero Section con foto arriba -->
@@ -321,6 +344,13 @@
           </div>
         </div>
       `,
+      // ================================================
+      // FIN SECCIÓN SOBRE MÍ
+      // ================================================
+
+      // ================================================
+      // SECCIÓN 2: EDUCACIÓN (Education)
+      // ================================================
       education: `
         <div class="animate-fadeIn">
           <h2 class="text-3xl font-bold mb-8 gradient-text">🎓 Formación Académica</h2>
@@ -413,14 +443,24 @@
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
                   Logros Principales
                 </h4>
+                <p class="text-gray-600 mb-3">
+                  Proyecto de tesis sobre análisis territorial y percepción comunitaria de imágenes en contexto de incendios forestales utilizando visión artificial e inteligencia artificial.
+                  <a href="https://ingenieria.uach.cl/noticias/mi-interes-radica-en-como-la-inteligencia-artificial-y-la-informatica-pueden-contribuir-a-resolver-problemas-relacionados-con-desastres-naturales/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
+                    🔗 Ver noticia de graduación
+                  </a>
+                </p>
                 <ul class="space-y-2 text-gray-600">
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Tesis sobre análisis territorial y percepción comunitaria de imágenes en contexto de incendios forestales</span>
+                    <span>Desarrollo de modelo de visión por computadora para identificación de objetos y categorización de incendios forestales</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Especialización en aprendizaje automático, redes neuronales y análisis de grandes volúmenes de datos</span>
+                    <span>Análisis comparativo entre conocimiento ciudadano y experto en percepción de riesgos de incendios</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Especialización en aprendizaje automático, redes neuronales convolucionales y análisis de grandes volúmenes de datos</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
@@ -538,68 +578,104 @@
           </div>
         </div>
       `,
+      // ================================================
+      // FIN SECCIÓN EDUCACIÓN
+      // ================================================
+
+      // ================================================
+      // SECCIÓN 3: EXPERIENCIA (Experience)
+      // ================================================
       experience: `
         <div class="animate-fadeIn">
           <h2 class="text-3xl font-bold mb-8 gradient-text">Experiencia Laboral</h2>
           <div class="space-y-8">
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
-              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Arquitecto y Desarrollador de Software</h3>
-                <p class="text-primary-light font-medium">Oct 2024 - Presente</p>
-              </div>
-              <p class="text-lg text-primary mb-4">Grupo GITECO, Universidad de Cantabria</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700">
-                <li>Diseño e implementación de soluciones de software para investigación en infraestructura vial.</li>
-                <li>Desarrollo de algoritmos de inteligencia artificial y deep learning para detección de deterioros en pavimentos.</li>
-                <li>Uso de AWS (EC2, ECR, S3) para procesamiento y almacenamiento de datos.</li>
-                <li>Integración de algoritmos de aprendizaje profundo en sistemas de análisis de infraestructura vial.</li>
-                <li>Uso de modelos predictivos multivariable para calcular la huella de carbono en pavimentos fabricados con materiales reciclados.</li>
-              </ul>
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span class="px-3 py-1 bg-gradient-to-r from-gray-800 to-black text-white text-xs font-semibold rounded shadow-sm">Next.js</span>
-                <span class="px-3 py-1 bg-gradient-to-r from-green-600 to-green-700 text-white text-xs font-semibold rounded shadow-sm">Node.js</span>
-                <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">MongoDB</span>
-                <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Python</span>
-                <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">AWS</span>
-                <span class="px-3 py-1 bg-gradient-to-r from-purple-600 to-purple-700 text-white text-xs font-semibold rounded shadow-sm">Deep Learning</span>
-              </div>
-            </div>
+<div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+    <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">
+      Arquitecto y Desarrollador de Software | Investigador en IA aplicada a Ingeniería Civil
+    </h3>
+    <p class="text-primary-light font-medium">Oct 2024 - Presente</p>
+  </div>
+  <p class="text-lg text-primary mb-4">Grupo GITECO, Universidad de Cantabria</p>
+  <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-1">
+    <li>Diseño e implementación de arquitecturas software y sistemas inteligentes para proyectos de investigación en pavimentos e infraestructuras viales.</li>
+    <li>Participación en proyectos como <strong>LIAISON</strong> (detección de grietas mediante visión artificial), <strong>RECICLAN</strong> (optimización económica y ambiental de materiales reciclados), y el proyecto de <strong>detección de señales de tráfico</strong> del Gobierno de Cantabria.</li>
+    <li>Desarrollo de modelos de <strong>deep learning</strong> y <strong>machine learning</strong> para clasificación, predicción y evaluación de deterioros en firmes.</li>
+    <li>Creación de la plataforma digital del <strong>Laboratorio de Mezclas Asfálticas (LabMezclas)</strong>, integrando gestión de ensayos, resultados y trazabilidad de probetas.</li>
+    <li>Análisis de datos experimentales del <strong>Simulador CRS</strong> y perfilómetro mediante técnicas de inteligencia artificial y modelos multicriterio.</li>
+    <li>Colaboración en la redacción de tres artículos científicos y desarrollo de la tesis doctoral en IA aplicada a ingeniería civil y materiales asfálticos.</li>
+  </ul>
+  <div class="flex flex-wrap gap-2 mt-4">
+    <span class="px-3 py-1 bg-gradient-to-r from-gray-800 to-black text-white text-xs font-semibold rounded shadow-sm">Python</span>
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">FastAPI</span>
+    <span class="px-3 py-1 bg-gradient-to-r from-green-600 to-green-700 text-white text-xs font-semibold rounded shadow-sm">Node.js</span>
+    <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">MongoDB</span>
+    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-xs font-semibold rounded shadow-sm">Docker</span>
+    <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">AWS</span>
+    <span class="px-3 py-1 bg-gradient-to-r from-purple-600 to-purple-700 text-white text-xs font-semibold rounded shadow-sm">Deep Learning</span>
+    <span class="px-3 py-1 bg-gradient-to-r from-sky-500 to-sky-600 text-white text-xs font-semibold rounded shadow-sm">Computer Vision</span>
+    <span class="px-3 py-1 bg-gradient-to-r from-rose-600 to-rose-700 text-white text-xs font-semibold rounded shadow-sm">Machine Learning</span>
+  </div>
+</div>
+
             
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Desarrollador de Software</h3>
                 <p class="text-primary-light font-medium">Ene 2023 - Dic 2024</p>
               </div>
-              <p class="text-lg text-primary mb-4">MIRCo UAM</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-1">
-                <li>Desarrollé frontend en React Native.</li>
-                <li>Backend usando MongoDB.</li>
-                <li>Sitio web desarrollado con Next.js.</li>
-                <li>Colaboré en proyecto interdisciplinario social.</li>
+              <p class="text-lg text-primary mb-4">MIRCo UAM - Madrid, España | Red Contested Territories</p>
+              <p class="text-gray-700 mb-4">
+                <strong>Voces Territorios:</strong> Plataforma de ciencia ciudadana que permite a comunidades de América Latina y Europa documentar y visibilizar transformaciones territoriales, luchas y resistencias frente al extractivismo, gentrificación y desposesión de tierras.
+                <a href="https://vocesterritorios.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
+                  🔗 vocesterritorios.com
+                </a>
+                <a href="https://www.contested-territories.net/app-de-ciencia-ciudadana-voces-territorios/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
+                  🔗 Sobre el proyecto
+                </a>
+              </p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-2">
+                <li><strong>Aplicación móvil de ciencia ciudadana:</strong> Desarrollé una app móvil multiplataforma con React Native y Expo Go (disponible en Google Play y App Store) que permite a comunidades documentar transformaciones territoriales mediante fotografías, audios, videos y documentos, funcionando con y sin conexión a internet.</li>
+                <li><strong>Atlas colaborativo interactivo:</strong> Implementé el sitio web oficial usando Next.js con un mapa colectivo donde usuarios de distintas regiones contribuyen a construir un Atlas de transformaciones, disputas y resistencias territoriales, fortaleciendo redes de solidaridad global.</li>
+                <li><strong>Backend escalable y multimedia:</strong> Diseñé e implementé la arquitectura backend con MongoDB y APIs RESTful para gestionar datos de usuarios, testimonios comunitarios, contenido multimedia geolocalizado y permitir funcionamiento offline con sincronización posterior.</li>
+                <li><strong>Plataforma participativa adaptable:</strong> Desarrollé una interfaz accesible que se adapta a las condiciones culturales de cada territorio, permitiendo que las comunidades propongan sus propios proyectos de investigación y plasmen sus saberes locales.</li>
+                <li><strong>Colaboración interdisciplinaria:</strong> Trabajé con investigadores de la red Contested Territories y el proyecto Horizon 2020 Marie Skłodowska-Curie para crear un puente entre academia y movimientos populares, estableciendo colaboración horizontal.</li>
               </ul>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold rounded shadow-sm">React Native</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-xs font-semibold rounded shadow-sm">Expo Go</span>
                 <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">MongoDB</span>
                 <span class="px-3 py-1 bg-gradient-to-r from-gray-800 to-black text-white text-xs font-semibold rounded shadow-sm">Next.js</span>
                 <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">API REST</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-xs font-semibold rounded shadow-sm">Full Stack</span>
               </div>
             </div>
             
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Científico de Datos</h3>
-                <p class="text-primary-light font-medium">Abr 2023 - Presente</p>
+                <p class="text-primary-light font-medium">Abr 2023 - Ago 2024</p>
               </div>
-              <p class="text-lg text-primary mb-4">FONDEF ID22I10072</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-1">
-                <li>Modelos CNN con TensorFlow y PyTorch para análisis de imágenes y lenguaje natural.</li>
-                <li>Algoritmos avanzados para detección visual en imágenes comunitarias de incendios forestales.</li>
-                <li>Análisis de datos con Matplotlib y Seaborn.</li>
+              <p class="text-lg text-primary mb-4">FONDEF ID22I10072 - FIRESES</p>
+              <p class="text-gray-700 mb-4">
+                Investigación en inteligencia artificial aplicada a la detección y categorización de incendios forestales mediante análisis de imágenes comunitarias.
+                <a href="https://nucleos.uach.cl/noticias/post.php?s=2022-11-09-plataforma-para-seguimiento-de-la-percepcion-comunitaria-del-riesgo-de-incendios" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
+                  🔗 Ver proyecto
+                </a>
+              </p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-2">
+                <li><strong>Modelo de identificación de objetos:</strong> Desarrollé un modelo de visión por computadora que identifica objetos específicos en imágenes relacionadas con incendios forestales (humo, llamas, vegetación, estructuras afectadas, etc.).</li>
+                <li><strong>Categorización de incendios:</strong> Implementé un sistema de vinculación automática de objetos detectados a categorías de incendios forestales establecidas, permitiendo clasificación precisa del tipo y severidad del evento.</li>
+                <li><strong>Comparativa ciudadanía vs expertos:</strong> Realicé análisis comparativo entre el conocimiento y percepción de la ciudadanía frente a criterios de expertos, identificando brechas de conocimiento y patrones de percepción del riesgo.</li>
+                <li><strong>Deep Learning con CNN:</strong> Utilicé redes neuronales convolucionales con TensorFlow y PyTorch para análisis de imágenes y procesamiento de lenguaje natural.</li>
+                <li><strong>Visualización y análisis:</strong> Creé dashboards interactivos con Matplotlib y Seaborn para presentar resultados de detección y análisis comparativo.</li>
               </ul>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">TensorFlow</span>
                 <span class="px-3 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-semibold rounded shadow-sm">PyTorch</span>
                 <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Python</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">Computer Vision</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-pink-500 to-pink-600 text-white text-xs font-semibold rounded shadow-sm">CNN</span>
                 <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">Visualización de Datos</span>
               </div>
             </div>
@@ -607,25 +683,40 @@
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Desarrollador de Software</h3>
-                <p class="text-primary-light font-medium">Abr 2022 - Dic 2022</p>
+                <p class="text-primary-light font-medium">Mar 2022 - Dic 2022</p>
               </div>
-              <p class="text-lg text-primary mb-4">FONDEF ID22I10072</p>
-              <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-1">
-                <li>Lideré migración de app web a móvil con React Native.</li>
-                <li>Desarrollé API y tablero analítico sobre percepción de riesgos de incendios.</li>
-                <li>Implementé blockchain con Solidity para seguridad y anonimato.</li>
+              <p class="text-lg text-primary mb-4">FONDEF ID22I10072 - FIRESES UACh</p>
+              <p class="text-gray-700 mb-4">
+                Proyecto E-ncendio: Adaptación de aplicación web a plataforma móvil para seguimiento de percepción comunitaria del riesgo de incendios.
+                <a href="https://nucleos.uach.cl/noticias/post.php?s=2022-11-09-plataforma-para-seguimiento-de-la-percepcion-comunitaria-del-riesgo-de-incendios" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
+                  🔗 Ver noticia
+                </a>
+              </p>
+              <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-2">
+                <li><strong>Adaptación móvil:</strong> Realicé la migración y adaptación de la aplicación web E-ncendio a una aplicación móvil con React Native, mejorando la accesibilidad y experiencia de usuario en dispositivos móviles.</li>
+                <li><strong>Blockchain para trazabilidad:</strong> Implementé tecnología blockchain para garantizar la trazabilidad y transparencia de las respuestas de usuarios, asegurando la integridad de los datos comunitarios recopilados sobre percepción de riesgo.</li>
+                <li><strong>Integración con backend:</strong> Desarrollé la conexión entre la aplicación móvil y los sistemas backend existentes, asegurando sincronización de datos y funcionamiento offline.</li>
               </ul>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold rounded shadow-sm">React Native</span>
-                <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold rounded shadow-sm">MongoDB</span>
                 <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-xs font-semibold rounded shadow-sm">Blockchain</span>
-                <span class="px-3 py-1 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-xs font-semibold rounded shadow-sm">Solidity</span>
                 <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold rounded shadow-sm">API REST</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-gray-700 to-gray-800 text-white text-xs font-semibold rounded shadow-sm">Mobile Dev</span>
               </div>
+            </div>
+            
+
             </div>
           </div>
         </div>
       `,
+      // ================================================
+      // FIN SECCIÓN EXPERIENCIA
+      // ================================================
+
+      // ================================================
+      // SECCIÓN 4: PROYECTOS (Projects)
+      // ================================================
       projects: `
         <div class="animate-fadeIn">
           <h2 class="text-3xl font-bold mb-8 gradient-text">Proyectos Destacados</h2>
@@ -751,6 +842,13 @@
           </div>
         </div>
       `,
+      // ================================================
+      // FIN SECCIÓN PROYECTOS
+      // ================================================
+
+      // ================================================
+      // SECCIÓN 5: HABILIDADES (Skills)
+      // ================================================
       skills: `
         <div class="animate-fadeIn">
           <h2 class="text-3xl font-bold mb-8 gradient-text">💻 Tech Stack</h2>
@@ -975,6 +1073,9 @@
           </div>
         </div>
       `
+      // ================================================
+      // FIN SECCIÓN HABILIDADES
+      // ================================================
     };
 
     // Cargar todas las secciones al inicio
@@ -1046,5 +1147,11 @@
       updateActiveSection();
     }
   </script>
+  <!-- ======================================== -->
+  <!-- FIN JAVASCRIPT -->
+  <!-- ======================================== -->
 </body>
+<!-- ============================================ -->
+<!-- FIN BODY -->
+<!-- ============================================ -->
 </html>
