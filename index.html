@@ -8,43 +8,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sebastián Lara Barría</title>
   <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script> 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            'primary-light': '#3b82f6',
+            secondary: '#475569',
+            accent: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
-    :root {
-      --primary: #2563eb;
-      --primary-light: #3b82f6;
-      --secondary: #475569;
-      --accent: #f59e0b;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes scaleIn {
-      from { transform: scale(0.95); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .animate-fadeIn {
-      animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    .animate-slideIn {
-      animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    .animate-scaleIn {
-      animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
+    /* Estilos específicos de la página que sobreescriben o complementan style.css */
     .nav-button {
       position: relative;
       padding: 0.5rem 1rem;
@@ -58,7 +40,7 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background: var(--primary);
+      background: #2563eb;
       transition: all 0.3s ease;
       transform: translateX(-50%);
     }
@@ -68,7 +50,7 @@
     }
 
     .nav-button.active {
-      color: var(--primary);
+      color: #2563eb;
       font-weight: 600;
     }
 
@@ -126,7 +108,7 @@
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -217,21 +199,21 @@
       // SECCIÓN 1: SOBRE MÍ (About)
       // ================================================
       about: `
-        <div class="animate-fadeIn">
+        <div class="reveal">
           <!-- Hero Section con foto arriba -->
-          <div class="section-card p-8 md:p-12 mb-8">
+          <div class="section-card p-8 md:p-12 mb-8 reveal-scale">
             <div class="flex flex-col items-center text-center mb-8">
               <div class="relative group mb-6">
                 <div class="absolute -inset-1 bg-gradient-to-r from-primary to-primary-light rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
                 <img src="foto.jpg" alt="Foto de perfil" class="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl transform transition duration-500 group-hover:scale-105 border-4 border-white"/>
               </div>
               
-              <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+              <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight reveal delay-100">
                 <span class="gradient-text">Sebastián Lara Barría</span>
               </h2>
               
               <!-- Información personal -->
-              <div class="flex flex-wrap justify-center items-center gap-4 mb-4 text-gray-600">
+              <div class="flex flex-wrap justify-center items-center gap-4 mb-4 text-gray-600 reveal delay-200">
                 <div class="flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
@@ -253,13 +235,13 @@
                 </div>
               </div>
               
-              <div class="flex flex-wrap justify-center gap-2 mb-6">
+              <div class="flex flex-wrap justify-center gap-2 mb-6 reveal delay-300">
                 <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full shadow-md">Ingeniero en Informática</span>
                 <span class="px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-semibold rounded-full shadow-md">Máster en Ciencia de Datos</span>
                 <span class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-sm font-semibold rounded-full shadow-md">Candidato a Doctor</span>
               </div>
               
-              <div class="flex flex-wrap justify-center gap-4">
+              <div class="flex flex-wrap justify-center gap-4 reveal delay-400">
                 <a href="mailto:sebastianlarabarria@gmail.com" class="flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-red-500 text-red-600 rounded-lg hover:bg-red-500 hover:text-white hover:border-red-500 transform hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -284,7 +266,7 @@
           
           <!-- Secciones de información -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <div class="section-card p-8">
+            <div class="section-card p-8 reveal-left delay-300">
               <div class="flex items-center gap-3 mb-6">
                 <div class="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
@@ -298,7 +280,7 @@
               </p>
             </div>
             
-            <div class="section-card p-8">
+            <div class="section-card p-8 reveal delay-400">
               <div class="flex items-center gap-3 mb-6">
                 <div class="p-3 bg-gradient-to-br from-green-500 to-green-600 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
@@ -314,7 +296,7 @@
           </div>
           
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="section-card p-8">
+            <div class="section-card p-8 reveal-left delay-500">
               <div class="flex items-center gap-3 mb-6">
                 <div class="p-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
@@ -328,7 +310,7 @@
               </p>
             </div>
             
-            <div class="section-card p-8">
+            <div class="section-card p-8 reveal delay-500">
               <div class="flex items-center gap-3 mb-6">
                 <div class="p-3 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
@@ -352,11 +334,11 @@
       // SECCIÓN 2: EDUCACIÓN (Education)
       // ================================================
       education: `
-        <div class="animate-fadeIn">
-          <h2 class="text-3xl font-bold mb-8 gradient-text">🎓 Formación Académica</h2>
+        <div class="reveal">
+          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100">🎓 Formación Académica</h2>
           <div class="space-y-8">
             <!-- Doctorado -->
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden reveal-left delay-200">
               <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full"></div>
               <div class="flex items-start gap-4 mb-4">
                 <div class="p-3 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex-shrink-0">
@@ -422,7 +404,7 @@
             </div>
 
             <!-- Máster -->
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden reveal-left delay-300">
               <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full"></div>
               <div class="flex items-start gap-4 mb-4">
                 <div class="p-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex-shrink-0">
@@ -503,7 +485,7 @@
             </div>
 
             <!-- Ingeniería -->
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden reveal-left delay-400">
               <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-full"></div>
               <div class="flex items-start gap-4 mb-4">
                 <div class="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex-shrink-0">
@@ -586,10 +568,10 @@
       // SECCIÓN 3: EXPERIENCIA (Experience)
       // ================================================
       experience: `
-        <div class="animate-fadeIn">
-          <h2 class="text-3xl font-bold mb-8 gradient-text">Experiencia Laboral</h2>
+        <div class="reveal">
+          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100">Experiencia Laboral</h2>
           <div class="space-y-8">
-<div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+<div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-200">
   <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
     <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">
       Arquitecto y Desarrollador de Software | Investigador en IA aplicada a Ingeniería Civil
@@ -619,7 +601,7 @@
 </div>
 
             
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-300">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Desarrollador de Software</h3>
                 <p class="text-primary-light font-medium">Ene 2023 - Dic 2024</p>
@@ -651,7 +633,7 @@
               </div>
             </div>
             
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-400">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Científico de Datos</h3>
                 <p class="text-primary-light font-medium">Abr 2023 - Ago 2024</p>
@@ -680,7 +662,7 @@
               </div>
             </div>
             
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-500">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Desarrollador de Software</h3>
                 <p class="text-primary-light font-medium">Mar 2022 - Dic 2022</p>
@@ -718,10 +700,10 @@
       // SECCIÓN 4: PROYECTOS (Projects)
       // ================================================
       projects: `
-        <div class="animate-fadeIn">
-          <h2 class="text-3xl font-bold mb-8 gradient-text">Proyectos Destacados</h2>
+        <div class="reveal">
+          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100">Proyectos Destacados</h2>
           <div class="space-y-8">
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-200">
               <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold group-hover:text-primary transition-colors mb-2">Voces Territorios</h3>
@@ -772,7 +754,7 @@
               </div>
             </div>
 
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-300">
               <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold group-hover:text-primary transition-colors mb-2">Análisis Territorial de Incendios Forestales</h3>
@@ -806,7 +788,7 @@
               </div>
             </div>
 
-            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300">
+            <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-400">
               <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold group-hover:text-primary transition-colors mb-2">Plataforma de Ciencia Ciudadana</h3>
@@ -1127,6 +1109,28 @@
       });
     });
 
+    // Configurar Intersection Observer para animaciones
+    function setupIntersectionObserver() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Solo animar una vez
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
     // Evento de scroll para actualizar sección activa
     window.addEventListener('scroll', updateActiveSection);
 
@@ -1134,6 +1138,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       loadAllSections();
       updateActiveSection();
+      // Pequeño timeout para asegurar que el DOM se ha renderizado
+      setTimeout(setupIntersectionObserver, 100);
     });
 
     // Por si el script se ejecuta después del DOMContentLoaded
@@ -1141,10 +1147,12 @@
       document.addEventListener('DOMContentLoaded', function() {
         loadAllSections();
         updateActiveSection();
+        setTimeout(setupIntersectionObserver, 100);
       });
     } else {
       loadAllSections();
       updateActiveSection();
+      setTimeout(setupIntersectionObserver, 100);
     }
   </script>
   <!-- ======================================== -->
