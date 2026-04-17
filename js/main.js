@@ -98,9 +98,39 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-    loadProjects();
-    const typingText = document.querySelector('.typing-text');
-    typeWriter(typingText, 'Desarrollador Web');
+    const langBtn = document.getElementById('lang-btn');
+    if(langBtn) {
+        langBtn.addEventListener('click', () => {
+            const currentLang = document.body.getAttribute('data-lang') || 'es';
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            setLanguage(newLang);
+            // Recargar el contenido de las secciones con el nuevo idioma
+            Object.keys(sectionsContent).forEach(sectionId => {
+                const sectionElement = document.getElementById(sectionId);
+                if (sectionElement) {
+                    sectionElement.innerHTML = sectionsContent[sectionId]();
+                }
+            });
+        });
+    }
+
+    // Cargar contenido inicial
+    Object.keys(sectionsContent).forEach(sectionId => {
+        const sectionElement = document.getElementById(sectionId);
+        if (sectionElement) {
+            sectionElement.innerHTML = sectionsContent[sectionId]();
+        }
+    });
+
+    // Navegación suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });

@@ -182,7 +182,7 @@
 <!-- ============================================ -->
 <!-- BODY: Contenido principal de la página -->
 <!-- ============================================ -->
-<body class="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+<body class="min-h-screen bg-gray-50 text-gray-800 flex flex-col" data-lang="es">
   
   <!-- ======================================== -->
   <!-- HEADER: Barra de navegación superior -->
@@ -192,12 +192,15 @@
       <div class="flex flex-col md:flex-row justify-between items-center">
         <h1 class="text-2xl font-bold gradient-text mb-4 md:mb-0 tracking-tight">Sebastián Lara Barría</h1>
         <ul class="flex flex-wrap justify-center gap-2 md:gap-4">
-          <li><a href="#about" id="btn-about" class="nav-button text-gray-700 hover:text-primary active px-3 py-2 rounded-full text-sm md:text-base font-medium">Sobre mí</a></li>
-          <li><a href="#education" id="btn-education" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Educación</a></li>
-          <li><a href="#experience" id="btn-experience" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Experiencia</a></li>
-          <li><a href="#achievements" id="btn-achievements" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Logros</a></li>
-          <li><a href="#skills" id="btn-skills" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">Habilidades</a></li>
+          <li><a href="#about" id="btn-about" class="nav-button text-gray-700 hover:text-primary active px-3 py-2 rounded-full text-sm md:text-base font-medium" data-lang-key="nav_about">Sobre mí</a></li>
+          <li><a href="#education" id="btn-education" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium" data-lang-key="nav_education">Educación</a></li>
+          <li><a href="#experience" id="btn-experience" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium" data-lang-key="nav_experience">Experiencia</a></li>
+          <li><a href="#achievements" id="btn-achievements" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium" data-lang-key="nav_achievements">Logros</a></li>
+          <li><a href="#skills" id="btn-skills" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium" data-lang-key="nav_skills">Habilidades</a></li>
         </ul>
+        <div id="language-switcher" class="absolute top-4 right-12">
+          <button id="lang-btn" class="nav-button text-gray-700 hover:text-primary px-3 py-2 rounded-full text-sm md:text-base font-medium">EN</button>
+        </div>
       </div>
     </nav>
   </header>
@@ -224,7 +227,7 @@
   <!-- FOOTER: Pie de página -->
   <!-- ======================================== -->
   <footer class="bg-white border-t border-gray-200 py-6">
-    <div class="max-w-6xl mx-auto px-6 text-center text-gray-500 text-sm">
+    <div class="max-w-6xl mx-auto px-6 text-center text-gray-500 text-sm" data-lang-key="footer_rights">
       &copy; 2025 Sebastián Lara Barría. Todos los derechos reservados.
     </div>
   </footer>
@@ -246,6 +249,7 @@
   <!-- ======================================== -->
   <!-- JAVASCRIPT: Contenido y lógica dinámica -->
   <!-- ======================================== -->
+  <script src="js/translations.js"></script>
   <script>
     const sectionsContent = {
       // ================================================
@@ -261,7 +265,7 @@
                 <img src="foto.jpg" alt="Foto de perfil" id="profile-image" class="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl transform transition duration-500 group-hover:scale-105 border-4 border-white cursor-pointer"/>
               </div>
               
-              <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight reveal delay-100">
+              <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight reveal delay-100" data-lang-key="about_title">
                 <span class="gradient-text">Sebastián Lara Barría</span>
               </h2>
               
@@ -271,27 +275,27 @@
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-sm md:text-base font-medium">Santander, España</span>
+                  <span class="text-sm md:text-base font-medium" data-lang-key="about_location">Santander, España</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-sm md:text-base font-medium">Nacionalidad Chilena</span>
+                  <span class="text-sm md:text-base font-medium" data-lang-key="about_nationality">Nacionalidad Chilena</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
                     <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
                   </svg>
-                  <span class="text-sm md:text-base font-medium">Licencia de Conducir Clase B</span>
+                  <span class="text-sm md:text-base font-medium" data-lang-key="about_license">Licencia de Conducir Clase B</span>
                 </div>
               </div>
               
               <div class="flex flex-wrap justify-center gap-2 mb-6 reveal delay-300">
-                <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full shadow-md">Ingeniero en Informática</span>
-                <span class="px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-semibold rounded-full shadow-md">Máster en Ciencia de Datos</span>
-                <span class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-sm font-semibold rounded-full shadow-md">Candidato a Doctor</span>
+                <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full shadow-md" data-lang-key="about_role1">Ingeniero en Informática</span>
+                <span class="px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-semibold rounded-full shadow-md" data-lang-key="about_role2">Máster en Ciencia de Datos</span>
+                <span class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-sm font-semibold rounded-full shadow-md" data-lang-key="about_role3">Candidato a Doctor</span>
               </div>
               
               <div class="flex flex-wrap justify-center gap-4 reveal delay-400">
@@ -299,7 +303,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
-                  <span class="font-medium">Contactar</span>
+                  <span class="font-medium" data-lang-key="about_contact">Contactar</span>
                 </a>
                 <a href="https://linkedin.com/in/slarab/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transform hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -324,9 +328,9 @@
                 <div class="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800">Especialización</h3>
+                <h3 class="text-2xl font-bold text-gray-800" data-lang-key="about_specialization_title">Especialización</h3>
               </div>
-              <p class="text-gray-600 leading-relaxed">
+              <p class="text-gray-600 leading-relaxed" data-lang-key="about_specialization_p1">
                 Me especializo en <strong class="text-primary">arquitectura de software</strong>, <strong class="text-primary">desarrollo full-stack</strong>, <strong class="text-primary">SQL y bases de datos relacionales</strong> e <strong class="text-primary">inteligencia artificial aplicada</strong>, con un enfoque particular en visión artificial y modelos predictivos para la resolución de problemas complejos. Mi experiencia técnica abarca desde el diseño de sistemas escalables hasta la implementación de soluciones de machine learning y deep learning en entornos de producción.
                 <br><br>
                 Domino tecnologías modernas como <strong class="text-primary">Next.js, React, Node.js y bases de datos como SQL y MongoDB</strong> para el desarrollo de aplicaciones web y móviles, así como frameworks especializados en IA como <strong class="text-primary">PyTorch, TensorFlow, Keras y Scikit-learn</strong> para la construcción de modelos predictivos robustos. Además, tengo amplia experiencia trabajando con servicios en la nube como <strong class="text-primary">AWS, Azure y Google Cloud Platform</strong>, implementando soluciones que requieren procesamiento a gran escala, almacenamiento distribuido y despliegue continuo de modelos de inteligencia artificial.
@@ -338,9 +342,9 @@
                 <div class="p-3 bg-gradient-to-br from-green-500 to-green-600 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800">Experiencia Profesional</h3>
+                <h3 class="text-2xl font-bold text-gray-800" data-lang-key="about_experience_title">Experiencia Profesional</h3>
               </div>
-              <p class="text-gray-600 leading-relaxed">
+              <p class="text-gray-600 leading-relaxed" data-lang-key="about_experience_p1">
                 A lo largo de mi trayectoria profesional, he liderado y participado en <strong class="text-primary">proyectos de transformación digital y optimización de procesos</strong>, aplicando técnicas avanzadas de aprendizaje automático, deep learning y visión artificial para mejorar la eficiencia operativa y facilitar la toma de decisiones basada en datos en sectores estratégicos como la <strong class="text-primary">infraestructura vial</strong> y la <strong class="text-primary">sostenibilidad ambiental</strong>.
                 <br><br>
                 Mi experiencia incluye el desarrollo de <strong class="text-primary">sistemas de detección y clasificación automática</strong> de deterioros en pavimentos utilizando redes neuronales convolucionales, la implementación de plataformas de ciencia ciudadana para la recopilación y análisis de datos comunitarios, y la construcción de modelos predictivos multivariables para evaluar el impacto ambiental de materiales reciclados. He trabajado en entornos colaborativos e interdisciplinarios, coordinando equipos de desarrollo y adaptando soluciones tecnológicas a las necesidades específicas de cada proyecto.
@@ -354,9 +358,9 @@
                 <div class="p-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800">Docencia</h3>
+                <h3 class="text-2xl font-bold text-gray-800" data-lang-key="about_teaching_title">Docencia</h3>
               </div>
-              <p class="text-gray-600 leading-relaxed">
+              <p class="text-gray-600 leading-relaxed" data-lang-key="about_teaching_p1">
                 He sido <strong class="text-primary">tutor en diversos cursos de ciencias básicas y de ingeniería en informática en la Universidad Austral de Chile</strong>, ayudando también como docente en algunas asignaturas, donde he compartido conocimientos sobre desarrollo de aplicaciones modernas con tecnologías web (React, Node.js, Express), diseño y gestión de bases de datos relacionales y no relacionales, así como metodologías ágiles de desarrollo (Scrum, Kanban).
                 <br><br>
                 Mi enfoque pedagógico se centra en el <strong class="text-primary">aprendizaje basado en proyectos</strong>, combinando fundamentos teóricos sólidos con prácticas intensivas que replican escenarios reales de la industria. Fomento activamente el pensamiento crítico, la colaboración en equipo y el uso de herramientas modernas de control de versiones (Git/GitHub), integración continua y despliegue automatizado. Mi objetivo es preparar profesionales capaces de enfrentar los desafíos actuales del desarrollo de software con competencias técnicas y habilidades sociales bien desarrolladas.
@@ -368,9 +372,9 @@
                 <div class="p-3 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800">Compromiso Social</h3>
+                <h3 class="text-2xl font-bold text-gray-800" data-lang-key="about_social_title">Compromiso Social</h3>
               </div>
-              <p class="text-gray-600 leading-relaxed">
+              <p class="text-gray-600 leading-relaxed" data-lang-key="about_social_p1">
                 Tengo un compromiso profundo con proyectos que <strong class="text-primary">generen un impacto positivo en la sociedad y el medio ambiente</strong>. Me intereso especialmente en iniciativas de <strong class="text-primary">ciencia ciudadana</strong>, donde la tecnología se pone al servicio de comunidades locales para empoderar a las personas en la recopilación, análisis y uso de datos que afectan directamente su entorno y calidad de vida.
                 <br><br>
                 He desarrollado plataformas que facilitan la participación ciudadana en proyectos de investigación ambiental y territorial, permitiendo que las voces de las comunidades sean escuchadas y consideradas en procesos de toma de decisiones. Creo firmemente en el <strong class="text-primary">uso ético, transparente y responsable de la inteligencia artificial</strong>, promoviendo el desarrollo de soluciones tecnológicas que sean inclusivas, accesibles y sostenibles, y que contribuyan a la equidad social y al cuidado del planeta para las generaciones futuras.
@@ -388,7 +392,7 @@
       // ================================================
       education: `
         <div class="reveal">
-          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100">🎓 Formación Académica</h2>
+          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100" data-lang-key="education_title">🎓 Formación Académica</h2>
           <div class="space-y-8">
             <!-- Doctorado -->
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 relative overflow-hidden reveal-left delay-200">
@@ -399,8 +403,8 @@
                 </div>
                 <div class="flex-1">
                   <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">Doctorado en Ingeniería Civil</h3>
-                    <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-semibold rounded-full shadow-sm">En curso</span>
+                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors" data-lang-key="education_phd_title">Doctorado en Ingeniería Civil</h3>
+                    <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-semibold rounded-full shadow-sm" data-lang-key="education_status_ongoing">En curso</span>
                   </div>
                   <p class="text-lg text-primary font-semibold mb-1">Universidad de Cantabria</p>
                   <p class="text-gray-500 text-sm mb-4">Oct 2024 - Presente</p>
@@ -410,16 +414,16 @@
               <div class="mb-6">
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
-                  Enfoque de Investigación
+                  <span data-lang-key="education_research_focus">Enfoque de Investigación</span>
                 </h4>
                 <ul class="space-y-2 text-gray-600">
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Detección, clasificación y caracterización de pavimento reciclado con visión artificial y aprendizaje profundo</span>
+                    <span data-lang-key="education_phd_research_1">Detección, clasificación y caracterización de pavimento reciclado con visión artificial y aprendizaje profundo</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Participación en congresos internacionales de inteligencia artificial y pavimentos</span>
+                    <span data-lang-key="education_phd_research_2">Participación en congresos internacionales de inteligencia artificial y pavimentos</span>
                   </li>
                 </ul>
               </div>
@@ -427,7 +431,7 @@
               <div>
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-                  Habilidades Técnicas
+                  <span data-lang-key="education_technical_skills">Habilidades Técnicas</span>
                 </h4>
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span class="px-3 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-semibold rounded shadow-sm">PyTorch</span>
@@ -444,7 +448,7 @@
                 
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2 mt-4">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
-                  Habilidades Sociales
+                  <span data-lang-key="education_social_skills">Habilidades Sociales</span>
                 </h4>
                 <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Trabajo en Equipo</span>
@@ -465,8 +469,8 @@
                 </div>
                 <div class="flex-1">
                   <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">Máster en Informática, mención Ciencia de Datos</h3>
-                    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm font-semibold rounded-full shadow-sm">Distinción</span>
+                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors" data-lang-key="education_master_title">Máster en Informática, mención Ciencia de Datos</h3>
+                    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm font-semibold rounded-full shadow-sm" data-lang-key="education_status_distinction">Distinción</span>
                   </div>
                   <p class="text-lg text-primary font-semibold mb-1">Universidad Austral de Chile</p>
                   <p class="text-gray-500 text-sm mb-4">Abr 2023 - Ago 2024</p>
@@ -476,30 +480,30 @@
               <div class="mb-6">
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
-                  Logros Principales
+                  <span data-lang-key="education_main_achievements">Logros Principales</span>
                 </h4>
                 <p class="text-gray-600 mb-3">
-                  Proyecto de tesis sobre análisis territorial y percepción comunitaria de imágenes en contexto de incendios forestales utilizando visión artificial e inteligencia artificial.
+                  <span data-lang-key="education_master_thesis_text">Proyecto de tesis sobre análisis territorial y percepción comunitaria de imágenes en contexto de incendios forestales utilizando visión artificial e inteligencia artificial.</span>
                   <a href="https://ingenieria.uach.cl/noticias/mi-interes-radica-en-como-la-inteligencia-artificial-y-la-informatica-pueden-contribuir-a-resolver-problemas-relacionados-con-desastres-naturales/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
-                    🔗 Ver noticia de graduación
+                    <span data-lang-key="education_master_thesis_link">🔗 Ver noticia de graduación</span>
                   </a>
                 </p>
                 <ul class="space-y-2 text-gray-600">
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Desarrollo de modelo de visión por computadora para identificación de objetos y categorización de incendios forestales</span>
+                    <span data-lang-key="education_master_achievement_1">Desarrollo de modelo de visión por computadora para identificación de objetos y categorización de incendios forestales</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Análisis comparativo entre conocimiento ciudadano y experto en percepción de riesgos de incendios</span>
+                    <span data-lang-key="education_master_achievement_2">Análisis comparativo entre conocimiento ciudadano y experto en percepción de riesgos de incendios</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Especialización en aprendizaje automático, redes neuronales convolucionales y análisis de grandes volúmenes de datos</span>
+                    <span data-lang-key="education_master_achievement_3">Especialización en aprendizaje automático, redes neuronales convolucionales y análisis de grandes volúmenes de datos</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Participación en congresos internacionales de Informática</span>
+                    <span data-lang-key="education_master_achievement_4">Participación en congresos internacionales de Informática</span>
                   </li>
                 </ul>
               </div>
@@ -507,7 +511,7 @@
               <div>
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-                  Habilidades Técnicas
+                  <span data-lang-key="education_technical_skills">Habilidades Técnicas</span>
                 </h4>
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span class="px-3 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-semibold rounded shadow-sm">PyTorch</span>
@@ -524,7 +528,7 @@
                 
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2 mt-4">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
-                  Habilidades Sociales
+                  <span data-lang-key="education_social_skills">Habilidades Sociales</span>
                 </h4>
                 <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Trabajo en Equipo</span>
@@ -546,8 +550,8 @@
                 </div>
                 <div class="flex-1">
                   <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">Ingeniería en Informática</h3>
-                    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm font-semibold rounded-full shadow-sm">Distinción</span>
+                    <h3 class="text-2xl font-bold group-hover:text-primary transition-colors" data-lang-key="education_engineering_title">Ingeniería en Informática</h3>
+                    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm font-semibold rounded-full shadow-sm" data-lang-key="education_status_distinction">Distinción</span>
                   </div>
                   <p class="text-lg text-primary font-semibold mb-1">Universidad Austral de Chile</p>
                   <p class="text-gray-500 text-sm mb-4">Mar 2015 - Dic 2022</p>
@@ -557,20 +561,20 @@
               <div class="mb-6">
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
-                  Destacados
+                  <span data-lang-key="education_highlights">Destacados</span>
                 </h4>
                 <ul class="space-y-2 text-gray-600">
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Participación activa en proyectos interdisciplinarios y desarrollo de software</span>
+                    <span data-lang-key="education_engineering_highlight_1">Participación activa en proyectos interdisciplinarios y desarrollo de software</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Participación en Centro de Estudiantes de la Facultad de Ciencias de la Ingeniería</span>
+                    <span data-lang-key="education_engineering_highlight_2">Participación en Centro de Estudiantes de la Facultad de Ciencias de la Ingeniería</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Tutor en: Cálculo, Sistemas de Información, Investigación Operativa y POO</span>
+                    <span data-lang-key="education_engineering_highlight_3">Tutor en: Cálculo, Sistemas de Información, Investigación Operativa y POO</span>
                   </li>
                 </ul>
               </div>
@@ -578,7 +582,7 @@
               <div>
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-                  Habilidades Técnicas
+                  <span data-lang-key="education_technical_skills">Habilidades Técnicas</span>
                 </h4>
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold rounded shadow-sm">Java</span>
@@ -597,7 +601,7 @@
                 
                 <h4 class="font-semibold text-gray-700 mb-3 flex items-center gap-2 mt-4">
                   <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
-                  Habilidades Sociales
+                  <span data-lang-key="education_social_skills">Habilidades Sociales</span>
                 </h4>
                 <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-semibold rounded shadow-sm">Liderazgo</span>
@@ -622,7 +626,7 @@
       // ================================================
       achievements: `
         <div class="reveal">
-          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100">🏆 Logros y Reconocimientos</h2>
+          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100" data-lang-key="achievements_title">🏆 Logros y Reconocimientos</h2>
           
           <!-- Congresos y Presentaciones -->
           <div class="section-card p-8 mb-8 reveal-left delay-200">
@@ -630,25 +634,25 @@
               <div class="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/></svg>
               </div>
-              <h3 class="text-2xl font-bold text-gray-800">Congresos y Publicaciones</h3>
+              <h3 class="text-2xl font-bold text-gray-800" data-lang-key="achievements_conferences_title">Congresos y Publicaciones</h3>
             </div>
             <div class="space-y-6">
               <div class="border-l-4 border-blue-500 pl-4 py-2 hover:bg-blue-50 transition-colors duration-300">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h4 class="text-lg font-semibold text-gray-800">Presentación de Tesis Máster</h4>
+                  <h4 class="text-lg font-semibold text-gray-800" data-lang-key="achievements_conf_1_title">Presentación de Tesis Máster</h4>
                   <span class="text-sm text-primary font-medium">2023</span>
                 </div>
-                <p class="text-gray-600 mb-2"><strong>Jornadas Chilenas de la Computación</strong></p>
-                <p class="text-gray-500 text-sm">Concepción, Chile</p>
+                <p class="text-gray-600 mb-2"><strong data-lang-key="achievements_conf_1_event">Jornadas Chilenas de la Computación</strong></p>
+                <p class="text-gray-500 text-sm" data-lang-key="achievements_conf_1_location">Concepción, Chile</p>
               </div>
               
               <div class="border-l-4 border-blue-500 pl-4 py-2 hover:bg-blue-50 transition-colors duration-300">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h4 class="text-lg font-semibold text-gray-800">Presentación en Conferencia IEEE</h4>
+                  <h4 class="text-lg font-semibold text-gray-800" data-lang-key="achievements_conf_2_title">Presentación en Conferencia IEEE</h4>
                   <span class="text-sm text-primary font-medium">2023</span>
                 </div>
-                <p class="text-gray-600 mb-2"><strong>ChileCon IEEE</strong></p>
-                <p class="text-gray-500 text-sm">Valdivia, Chile</p>
+                <p class="text-gray-600 mb-2"><strong data-lang-key="achievements_conf_2_event">ChileCon IEEE</strong></p>
+                <p class="text-gray-500 text-sm" data-lang-key="achievements_conf_2_location">Valdivia, Chile</p>
               </div>
             </div>
           </div>
@@ -659,7 +663,7 @@
               <div class="p-3 bg-gradient-to-br from-green-500 to-green-600 rounded-lg">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
               </div>
-              <h3 class="text-2xl font-bold text-gray-800">Proyectos Destacados</h3>
+              <h3 class="text-2xl font-bold text-gray-800" data-lang-key="achievements_projects_title">Proyectos Destacados</h3>
             </div>
             <div class="space-y-6">
               <div class="border-l-4 border-green-500 pl-4 py-2 hover:bg-green-50 transition-colors duration-300">
@@ -668,41 +672,41 @@
                   <span class="text-sm text-primary font-medium">2023 - 2024</span>
                 </div>
                 <p class="text-gray-600 mb-1"><strong>MIRCo UAM</strong></p>
-                <p class="text-gray-500 text-sm mb-2">Madrid, España</p>
-                <p class="text-gray-600 text-sm mb-2">Plataforma de ciencia ciudadana que permite registrar y visualizar luchas sociales por el territorio en diferentes regiones del mundo.</p>
+                <p class="text-gray-500 text-sm mb-2" data-lang-key="achievements_proj_1_location">Madrid, España</p>
+                <p class="text-gray-600 text-sm mb-2" data-lang-key="achievements_proj_1_desc">Plataforma de ciencia ciudadana que permite registrar y visualizar luchas sociales por el territorio en diferentes regiones del mundo.</p>
                 <a href="https://www.vocesterritorios.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline text-sm">
-                  🔗 vocesterritorios.com
+                  <span data-lang-key="achievements_proj_1_link">🔗 vocesterritorios.com</span>
                 </a>
               </div>
               
               <div class="border-l-4 border-green-500 pl-4 py-2 hover:bg-green-50 transition-colors duration-300">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h4 class="text-lg font-semibold text-gray-800">Análisis de Medios de Comunicación de Incendios Forestales</h4>
+                  <h4 class="text-lg font-semibold text-gray-800" data-lang-key="achievements_proj_2_title">Análisis de Medios de Comunicación de Incendios Forestales</h4>
                   <span class="text-sm text-primary font-medium">2023 - 2024</span>
                 </div>
-                <p class="text-gray-600 mb-1"><strong>Universidad Austral de Chile</strong></p>
-                <p class="text-gray-500 text-sm mb-2">Valdivia, Chile</p>
-                <p class="text-gray-600 text-sm">Análisis de la cobertura y tratamiento informativo de incendios forestales en medios de comunicación mediante técnicas de procesamiento de lenguaje natural.</p>
+                <p class="text-gray-600 mb-1"><strong data-lang-key="achievements_proj_2_org">Universidad Austral de Chile</strong></p>
+                <p class="text-gray-500 text-sm mb-2" data-lang-key="achievements_proj_2_location">Valdivia, Chile</p>
+                <p class="text-gray-600 text-sm" data-lang-key="achievements_proj_2_desc">Análisis de la cobertura y tratamiento informativo de incendios forestales en medios de comunicación mediante técnicas de procesamiento de lenguaje natural.</p>
               </div>
               
               <div class="border-l-4 border-green-500 pl-4 py-2 hover:bg-green-50 transition-colors duration-300">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h4 class="text-lg font-semibold text-gray-800">Análisis de Percepción Comunitaria Territorial de Incendios Forestales</h4>
+                  <h4 class="text-lg font-semibold text-gray-800" data-lang-key="achievements_proj_3_title">Análisis de Percepción Comunitaria Territorial de Incendios Forestales</h4>
                   <span class="text-sm text-primary font-medium">2023 - 2024</span>
                 </div>
-                <p class="text-gray-600 mb-1"><strong>Universidad Austral de Chile</strong></p>
-                <p class="text-gray-500 text-sm mb-2">Valdivia, Chile</p>
-                <p class="text-gray-600 text-sm">Desarrollo de modelos de redes neuronales convolucionales para analizar imágenes de incendios forestales y evaluación de la percepción comunitaria territorial.</p>
+                <p class="text-gray-600 mb-1"><strong data-lang-key="achievements_proj_3_org">Universidad Austral de Chile</strong></p>
+                <p class="text-gray-500 text-sm mb-2" data-lang-key="achievements_proj_3_location">Valdivia, Chile</p>
+                <p class="text-gray-600 text-sm" data-lang-key="achievements_proj_3_desc">Desarrollo de modelos de redes neuronales convolucionales para analizar imágenes de incendios forestales y evaluación de la percepción comunitaria territorial.</p>
               </div>
               
               <div class="border-l-4 border-green-500 pl-4 py-2 hover:bg-green-50 transition-colors duration-300">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h4 class="text-lg font-semibold text-gray-800">Desarrollo de Plataforma de Ciencia Ciudadana</h4>
+                  <h4 class="text-lg font-semibold text-gray-800" data-lang-key="achievements_proj_4_title">Desarrollo de Plataforma de Ciencia Ciudadana</h4>
                   <span class="text-sm text-primary font-medium">2022 - 2024</span>
                 </div>
-                <p class="text-gray-600 mb-2"><strong>Proyecto E-ncendio (FONDEF ID22I10072)</strong></p>
-                <p class="text-gray-500 text-sm mb-2">Valdivia, Chile</p>
-                <p class="text-gray-600 text-sm">Plataforma tecnológica para la percepción comunitaria del riesgo de incendios forestales utilizando ciencia ciudadana e inteligencia artificial.</p>
+                <p class="text-gray-600 mb-2"><strong data-lang-key="achievements_proj_4_org">Proyecto E-ncendio (FONDEF ID22I10072)</strong></p>
+                <p class="text-gray-500 text-sm mb-2" data-lang-key="achievements_proj_4_location">Valdivia, Chile</p>
+                <p class="text-gray-600 text-sm" data-lang-key="achievements_proj_4_desc">Plataforma tecnológica para la percepción comunitaria del riesgo de incendios forestales utilizando ciencia ciudadana e inteligencia artificial.</p>
               </div>
             </div>
           </div>
@@ -713,34 +717,34 @@
               <div class="p-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </div>
-              <h3 class="text-2xl font-bold text-gray-800">Reconocimientos</h3>
+              <h3 class="text-2xl font-bold text-gray-800" data-lang-key="achievements_awards_title">Reconocimientos</h3>
             </div>
             <div class="space-y-6">
               <div class="border-l-4 border-purple-500 pl-4 py-2 hover:bg-purple-50 transition-colors duration-300">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h4 class="text-lg font-semibold text-gray-800">Reconocimiento por Participación en Congresos con Tesis de Magíster</h4>
+                  <h4 class="text-lg font-semibold text-gray-800" data-lang-key="achievements_award_1_title">Reconocimiento por Participación en Congresos con Tesis de Magíster</h4>
                   <span class="text-sm text-primary font-medium">2024</span>
                 </div>
-                <p class="text-gray-600 mb-1"><strong>Magíster en Informática UACh</strong></p>
-                <p class="text-gray-500 text-sm">Valdivia, Chile</p>
+                <p class="text-gray-600 mb-1"><strong data-lang-key="achievements_award_1_org">Magíster en Informática UACh</strong></p>
+                <p class="text-gray-500 text-sm" data-lang-key="achievements_award_1_location">Valdivia, Chile</p>
               </div>
               
               <div class="border-l-4 border-purple-500 pl-4 py-2 hover:bg-purple-50 transition-colors duration-300">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h4 class="text-lg font-semibold text-gray-800">Reconocimiento por Liderazgo en Organización</h4>
+                  <h4 class="text-lg font-semibold text-gray-800" data-lang-key="achievements_award_2_title">Reconocimiento por Liderazgo en Organización</h4>
                   <span class="text-sm text-primary font-medium">2022</span>
                 </div>
-                <p class="text-gray-600 mb-1"><strong>Workshop de Ingeniería en Informática UACh</strong></p>
-                <p class="text-gray-500 text-sm">Valdivia, Chile</p>
+                <p class="text-gray-600 mb-1"><strong data-lang-key="achievements_award_2_org">Workshop de Ingeniería en Informática UACh</strong></p>
+                <p class="text-gray-500 text-sm" data-lang-key="achievements_award_2_location">Valdivia, Chile</p>
               </div>
               
               <div class="border-l-4 border-purple-500 pl-4 py-2 hover:bg-purple-50 transition-colors duration-300">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h4 class="text-lg font-semibold text-gray-800">Reconocimiento por Trayectoria en Política Estudiantil</h4>
+                  <h4 class="text-lg font-semibold text-gray-800" data-lang-key="achievements_award_3_title">Reconocimiento por Trayectoria en Política Estudiantil</h4>
                   <span class="text-sm text-primary font-medium">2022</span>
                 </div>
-                <p class="text-gray-600 mb-1"><strong>Escuela de Ingeniería en Informática UACh</strong></p>
-                <p class="text-gray-500 text-sm">Valdivia, Chile</p>
+                <p class="text-gray-600 mb-1"><strong data-lang-key="achievements_award_3_org">Escuela de Ingeniería en Informática UACh</strong></p>
+                <p class="text-gray-500 text-sm" data-lang-key="achievements_award_3_location">Valdivia, Chile</p>
               </div>
             </div>
           </div>
@@ -755,23 +759,23 @@
       // ================================================
       experience: `
         <div class="reveal">
-          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100">Experiencia Laboral</h2>
+          <h2 class="text-3xl font-bold mb-8 gradient-text reveal delay-100" data-lang-key="experience_title">Experiencia Laboral</h2>
           <div class="space-y-8">
 <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-200">
   <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-    <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">
+    <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors" data-lang-key="experience_role_1_title">
       Arquitecto y Desarrollador de Software | Investigador en IA aplicada a Ingeniería Civil
     </h3>
     <p class="text-primary-light font-medium">Oct 2024 - Presente</p>
   </div>
   <p class="text-lg text-primary mb-4">Grupo GITECO, Universidad de Cantabria</p>
   <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-1">
-    <li>Diseño e implementación de arquitecturas software y sistemas inteligentes para proyectos de investigación en pavimentos e infraestructuras viales.</li>
-    <li>Participación en proyectos como <strong>LIAISON</strong> (detección de grietas mediante visión artificial), <strong>RECICLAN</strong> (optimización económica y ambiental de materiales reciclados), y el proyecto de <strong>detección de señales de tráfico</strong> del Gobierno de Cantabria.</li>
-    <li>Desarrollo de modelos de <strong>deep learning</strong> y <strong>machine learning</strong> para clasificación, predicción y evaluación de deterioros en firmes.</li>
-    <li>Creación de la plataforma digital del <strong>Laboratorio de Mezclas Asfálticas (LabMezclas)</strong>, integrando gestión de ensayos, resultados y trazabilidad de probetas.</li>
-    <li>Análisis de datos experimentales del <strong>Simulador CRS</strong> y perfilómetro mediante técnicas de inteligencia artificial y modelos multicriterio.</li>
-    <li>Colaboración en la redacción de tres artículos científicos y desarrollo de la tesis doctoral en IA aplicada a ingeniería civil y materiales asfálticos.</li>
+    <li data-lang-key="experience_role_1_item_1">Diseño e implementación de arquitecturas software y sistemas inteligentes para proyectos de investigación en pavimentos e infraestructuras viales.</li>
+    <li data-lang-key="experience_role_1_item_2">Participación en proyectos como <strong>LIAISON</strong> (detección de grietas mediante visión artificial), <strong>RECICLAN</strong> (optimización económica y ambiental de materiales reciclados), y el proyecto de <strong>detección de señales de tráfico</strong> del Gobierno de Cantabria.</li>
+    <li data-lang-key="experience_role_1_item_3">Desarrollo de modelos de <strong>deep learning</strong> y <strong>machine learning</strong> para clasificación, predicción y evaluación de deterioros en firmes.</li>
+    <li data-lang-key="experience_role_1_item_4">Creación de la plataforma digital del <strong>Laboratorio de Mezclas Asfálticas (LabMezclas)</strong>, integrando gestión de ensayos, resultados y trazabilidad de probetas.</li>
+    <li data-lang-key="experience_role_1_item_5">Análisis de datos experimentales del <strong>Simulador CRS</strong> y perfilómetro mediante técnicas de inteligencia artificial y modelos multicriterio.</li>
+    <li data-lang-key="experience_role_1_item_6">Colaboración en la redacción de tres artículos científicos y desarrollo de la tesis doctoral en IA aplicada a ingeniería civil y materiales asfálticos.</li>
   </ul>
   <div class="flex flex-wrap gap-2 mt-4">
     <span class="px-3 py-1 bg-gradient-to-r from-gray-800 to-black text-white text-xs font-semibold rounded shadow-sm">Python</span>
@@ -789,25 +793,25 @@
             
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-300">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Desarrollador de Software</h3>
+                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors" data-lang-key="experience_role_2_title">Desarrollador de Software</h3>
                 <p class="text-primary-light font-medium">Ene 2023 - Dic 2024</p>
               </div>
               <p class="text-lg text-primary mb-4">MIRCo UAM - Madrid, España | Red Contested Territories</p>
               <p class="text-gray-700 mb-4">
-                <strong>Voces Territorios:</strong> Plataforma de ciencia ciudadana que permite a comunidades de América Latina y Europa documentar y visibilizar transformaciones territoriales, luchas y resistencias frente al extractivismo, gentrificación y desposesión de tierras.
+                <span data-lang-key="experience_role_2_desc"><strong>Voces Territorios:</strong> Plataforma de ciencia ciudadana que permite a comunidades de América Latina y Europa documentar y visibilizar transformaciones territoriales, luchas y resistencias frente al extractivismo, gentrificación y desposesión de tierras.</span>
                 <a href="https://vocesterritorios.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
                   🔗 vocesterritorios.com
                 </a>
                 <a href="https://www.contested-territories.net/app-de-ciencia-ciudadana-voces-territorios/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
-                  🔗 Sobre el proyecto
+                  <span data-lang-key="experience_role_2_project_link">🔗 Sobre el proyecto</span>
                 </a>
               </p>
               <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-2">
-                <li><strong>Aplicación móvil de ciencia ciudadana:</strong> Desarrollé una app móvil multiplataforma con React Native y Expo Go (disponible en Google Play y App Store) que permite a comunidades documentar transformaciones territoriales mediante fotografías, audios, videos y documentos, funcionando con y sin conexión a internet.</li>
-                <li><strong>Atlas colaborativo interactivo:</strong> Implementé el sitio web oficial usando Next.js con un mapa colectivo donde usuarios de distintas regiones contribuyen a construir un Atlas de transformaciones, disputas y resistencias territoriales, fortaleciendo redes de solidaridad global.</li>
-                <li><strong>Backend escalable y multimedia:</strong> Diseñé e implementé la arquitectura backend con MongoDB y APIs RESTful para gestionar datos de usuarios, testimonios comunitarios, contenido multimedia geolocalizado y permitir funcionamiento offline con sincronización posterior.</li>
-                <li><strong>Plataforma participativa adaptable:</strong> Desarrollé una interfaz accesible que se adapta a las condiciones culturales de cada territorio, permitiendo que las comunidades propongan sus propios proyectos de investigación y plasmen sus saberes locales.</li>
-                <li><strong>Colaboración interdisciplinaria:</strong> Trabajé con investigadores de la red Contested Territories y el proyecto Horizon 2020 Marie Skłodowska-Curie para crear un puente entre academia y movimientos populares, estableciendo colaboración horizontal.</li>
+                <li data-lang-key="experience_role_2_item_1"><strong>Aplicación móvil de ciencia ciudadana:</strong> Desarrollé una app móvil multiplataforma con React Native y Expo Go (disponible en Google Play y App Store) que permite a comunidades documentar transformaciones territoriales mediante fotografías, audios, videos y documentos, funcionando con y sin conexión a internet.</li>
+                <li data-lang-key="experience_role_2_item_2"><strong>Atlas colaborativo interactivo:</strong> Implementé el sitio web oficial usando Next.js con un mapa colectivo donde usuarios de distintas regiones contribuyen a construir un Atlas de transformaciones, disputas y resistencias territoriales, fortaleciendo redes de solidaridad global.</li>
+                <li data-lang-key="experience_role_2_item_3"><strong>Backend escalable y multimedia:</strong> Diseñé e implementé la arquitectura backend con MongoDB y APIs RESTful para gestionar datos de usuarios, testimonios comunitarios, contenido multimedia geolocalizado y permitir funcionamiento offline con sincronización posterior.</li>
+                <li data-lang-key="experience_role_2_item_4"><strong>Plataforma participativa adaptable:</strong> Desarrollé una interfaz accesible que se adapta a las condiciones culturales de cada territorio, permitiendo que las comunidades propongan sus propios proyectos de investigación y plasmen sus saberes locales.</li>
+                <li data-lang-key="experience_role_2_item_5"><strong>Colaboración interdisciplinaria:</strong> Trabajé con investigadores de la red Contested Territories y el proyecto Horizon 2020 Marie Skłodowska-Curie para crear un puente entre academia y movimientos populares, estableciendo colaboración horizontal.</li>
               </ul>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold rounded shadow-sm">React Native</span>
@@ -821,22 +825,22 @@
             
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-400">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Científico de Datos</h3>
+                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors" data-lang-key="experience_role_3_title">Científico de Datos</h3>
                 <p class="text-primary-light font-medium">Abr 2023 - Ago 2024</p>
               </div>
               <p class="text-lg text-primary mb-4">FONDEF ID22I10072 - FIRESES</p>
               <p class="text-gray-700 mb-4">
-                Investigación en inteligencia artificial aplicada a la detección y categorización de incendios forestales mediante análisis de imágenes comunitarias.
+                <span data-lang-key="experience_role_3_desc">Investigación en inteligencia artificial aplicada a la detección y categorización de incendios forestales mediante análisis de imágenes comunitarias.</span>
                 <a href="https://nucleos.uach.cl/noticias/post.php?s=2022-11-09-plataforma-para-seguimiento-de-la-percepcion-comunitaria-del-riesgo-de-incendios" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
-                  🔗 Ver proyecto
+                  <span data-lang-key="experience_role_3_project_link">🔗 Ver proyecto</span>
                 </a>
               </p>
               <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-2">
-                <li><strong>Modelo de identificación de objetos:</strong> Desarrollé un modelo de visión por computadora que identifica objetos específicos en imágenes relacionadas con incendios forestales (humo, llamas, vegetación, estructuras afectadas, etc.).</li>
-                <li><strong>Categorización de incendios:</strong> Implementé un sistema de vinculación automática de objetos detectados a categorías de incendios forestales establecidas, permitiendo clasificación precisa del tipo y severidad del evento.</li>
-                <li><strong>Comparativa ciudadanía vs expertos:</strong> Realicé análisis comparativo entre el conocimiento y percepción de la ciudadanía frente a criterios de expertos, identificando brechas de conocimiento y patrones de percepción del riesgo.</li>
-                <li><strong>Deep Learning con CNN:</strong> Utilicé redes neuronales convolucionales con TensorFlow y PyTorch para análisis de imágenes y procesamiento de lenguaje natural.</li>
-                <li><strong>Visualización y análisis:</strong> Creé dashboards interactivos con Matplotlib y Seaborn para presentar resultados de detección y análisis comparativo.</li>
+                <li data-lang-key="experience_role_3_item_1"><strong>Modelo de identificación de objetos:</strong> Desarrollé un modelo de visión por computadora que identifica objetos específicos en imágenes relacionadas con incendios forestales (humo, llamas, vegetación, estructuras afectadas, etc.).</li>
+                <li data-lang-key="experience_role_3_item_2"><strong>Categorización de incendios:</strong> Implementé un sistema de vinculación automática de objetos detectados a categorías de incendios forestales establecidas, permitiendo clasificación precisa del tipo y severidad del evento.</li>
+                <li data-lang-key="experience_role_3_item_3"><strong>Comparativa ciudadanía vs expertos:</strong> Realicé análisis comparativo entre el conocimiento y percepción de la ciudadanía frente a criterios de expertos, identificando brechas de conocimiento y patrones de percepción del riesgo.</li>
+                <li data-lang-key="experience_role_3_item_4"><strong>Deep Learning con CNN:</strong> Utilicé redes neuronales convolucionales con TensorFlow y PyTorch para análisis de imágenes y procesamiento de lenguaje natural.</li>
+                <li data-lang-key="experience_role_3_item_5"><strong>Visualización y análisis:</strong> Creé dashboards interactivos con Matplotlib y Seaborn para presentar resultados de detección y análisis comparativo.</li>
               </ul>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold rounded shadow-sm">TensorFlow</span>
@@ -850,20 +854,20 @@
             
             <div class="group section-card p-8 hover:border-l-4 hover:border-primary transition-all duration-300 reveal-left delay-500">
               <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors">Desarrollador de Software</h3>
+                <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors" data-lang-key="experience_role_4_title">Desarrollador de Software</h3>
                 <p class="text-primary-light font-medium">Mar 2022 - Dic 2022</p>
               </div>
               <p class="text-lg text-primary mb-4">FONDEF ID22I10072 - FIRESES UACh</p>
               <p class="text-gray-700 mb-4">
-                Proyecto E-ncendio: Adaptación de aplicación web a plataforma móvil para seguimiento de percepción comunitaria del riesgo de incendios.
+                <span data-lang-key="experience_role_4_desc">Proyecto E-ncendio: Adaptación de aplicación web a plataforma móvil para seguimiento de percepción comunitaria del riesgo de incendios.</span>
                 <a href="https://nucleos.uach.cl/noticias/post.php?s=2022-11-09-plataforma-para-seguimiento-de-la-percepcion-comunitaria-del-riesgo-de-incendios" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline ml-1">
-                  🔗 Ver noticia
+                  <span data-lang-key="experience_role_4_news_link">🔗 Ver noticia</span>
                 </a>
               </p>
               <ul class="mt-2 list-disc pl-5 text-gray-700 space-y-2">
-                <li><strong>Adaptación móvil:</strong> Realicé la migración y adaptación de la aplicación web E-ncendio a una aplicación móvil con React Native, mejorando la accesibilidad y experiencia de usuario en dispositivos móviles.</li>
-                <li><strong>Blockchain para trazabilidad:</strong> Implementé tecnología blockchain para garantizar la trazabilidad y transparencia de las respuestas de usuarios, asegurando la integridad de los datos comunitarios recopilados sobre percepción de riesgo.</li>
-                <li><strong>Integración con backend:</strong> Desarrollé la conexión entre la aplicación móvil y los sistemas backend existentes, asegurando sincronización de datos y funcionamiento offline.</li>
+                <li data-lang-key="experience_role_4_item_1"><strong>Adaptación móvil:</strong> Realicé la migración y adaptación de la aplicación web E-ncendio a una aplicación móvil con React Native, mejorando la accesibilidad y experiencia de usuario en dispositivos móviles.</li>
+                <li data-lang-key="experience_role_4_item_2"><strong>Blockchain para trazabilidad:</strong> Implementé tecnología blockchain para garantizar la trazabilidad y transparencia de las respuestas de usuarios, asegurando la integridad de los datos comunitarios recopilados sobre percepción de riesgo.</li>
+                <li data-lang-key="experience_role_4_item_3"><strong>Integración con backend:</strong> Desarrollé la conexión entre la aplicación móvil y los sistemas backend existentes, asegurando sincronización de datos y funcionamiento offline.</li>
               </ul>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold rounded shadow-sm">React Native</span>
@@ -887,12 +891,12 @@
       // ================================================
       skills: `
         <div class="animate-fadeIn">
-          <h2 class="text-3xl font-bold mb-8 gradient-text">💻 Tech Stack</h2>
+          <h2 class="text-3xl font-bold mb-8 gradient-text" data-lang-key="skills_title">💻 Tech Stack</h2>
           
           <div class="section-card p-8 mb-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"/><path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clip-rule="evenodd"/></svg>
-              Lenguajes y Frameworks
+              <span data-lang-key="skills_languages_frameworks">Lenguajes y Frameworks</span>
             </h3>
             <div class="flex flex-wrap gap-2 mb-6">
               <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
@@ -920,7 +924,7 @@
           <div class="section-card p-8 mb-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"/></svg>
-              Bases de Datos
+              <span data-lang-key="skills_databases">Bases de Datos</span>
             </h3>
             <div class="flex flex-wrap gap-2">
               <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
@@ -935,7 +939,7 @@
           <div class="section-card p-8 mb-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-              AI/ML y Data Science
+              <span data-lang-key="skills_ai_ml_data_science">AI/ML y Data Science</span>
             </h3>
             <div class="flex flex-wrap gap-2">
               <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch" />
@@ -955,7 +959,7 @@
           <div class="section-card p-8 mb-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"/></svg>
-              Cloud y DevOps
+              <span data-lang-key="skills_cloud_devops">Cloud y DevOps</span>
             </h3>
             <div class="flex flex-wrap gap-2">
               <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
@@ -973,7 +977,7 @@
           <div class="section-card p-8 mb-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              Herramientas de Desarrollo
+              <span data-lang-key="skills_dev_tools">Herramientas de Desarrollo</span>
             </h3>
             <div class="flex flex-wrap gap-2">
               <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
@@ -991,7 +995,7 @@
           <div class="section-card p-8 mb-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd"/></svg>
-              Diseño y Multimedia
+              <span data-lang-key="skills_design_multimedia">Diseño y Multimedia</span>
             </h3>
             <div class="flex flex-wrap gap-2">
               <img src="https://img.shields.io/badge/adobe-%23FF0000.svg?style=for-the-badge&logo=adobe&logoColor=white" alt="Adobe" />
@@ -1008,7 +1012,7 @@
           <div class="section-card p-8 mb-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/></svg>
-              Otros
+              <span data-lang-key="skills_others">Otros</span>
             </h3>
             <div class="flex flex-wrap gap-2">
               <img src="https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white" alt="Unity" />
@@ -1022,88 +1026,88 @@
           <div class="section-card p-8">
             <h3 class="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
-              Habilidades Sociales
+              <span data-lang-key="skills_social_skills">Habilidades Sociales</span>
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Gestión del tiempo</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_1">Gestión del tiempo</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
-                <span class="font-medium text-gray-700">Trabajo en equipo</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_2">Trabajo en equipo</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Resolución de problemas</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_3">Resolución de problemas</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Pensamiento crítico</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_4">Pensamiento crítico</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Liderazgo técnico</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_5">Liderazgo técnico</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Comunicación efectiva</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_6">Comunicación efectiva</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Organización y planificación</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_7">Organización y planificación</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
-                <span class="font-medium text-gray-700">Creatividad e innovación</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_8">Creatividad e innovación</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Adaptabilidad</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_9">Adaptabilidad</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Proactividad</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_10">Proactividad</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Empatía</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_11">Empatía</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Atención al detalle</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_12">Atención al detalle</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
-                <span class="font-medium text-gray-700">Orientación a resultados</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_13">Orientación a resultados</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/></svg>
-                <span class="font-medium text-gray-700">Ética profesional</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_14">Ética profesional</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Colaboración interdisciplinaria</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_15">Colaboración interdisciplinaria</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Visión estratégica</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_16">Visión estratégica</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Mentoría y enseñanza</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_17">Mentoría y enseñanza</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Aprendizaje continuo</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_18">Aprendizaje continuo</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Integridad y confiabilidad</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_19">Integridad y confiabilidad</span>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg hover:shadow-md transition-all duration-300">
                 <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"/></svg>
-                <span class="font-medium text-gray-700">Pasión por la tecnología</span>
+                <span class="font-medium text-gray-700" data-lang-key="skills_soft_20">Pasión por la tecnología</span>
               </div>
             </div>
           </div>
